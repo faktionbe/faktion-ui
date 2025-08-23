@@ -4,7 +4,7 @@ import {
   ReactElement,
   ReactNode,
   useMemo,
-} from "react";
+} from 'react';
 
 type TypeWithDisplayName = ReactElement & {
   type: { displayName: string };
@@ -14,10 +14,10 @@ const isElementWithDisplayName = (
   element: Exclude<ReactNode, boolean | null | undefined>
 ): element is TypeWithDisplayName =>
   isValidElement(element) &&
-  "props" in element &&
-  typeof element.type !== "string" &&
-  "displayName" in element.type &&
-  typeof element.type.displayName === "string";
+  'props' in element &&
+  typeof element.type !== 'string' &&
+  'displayName' in element.type &&
+  typeof element.type.displayName === 'string';
 
 /**
  * A hook to extract children of a specific type from a composition.

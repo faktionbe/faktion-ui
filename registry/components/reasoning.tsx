@@ -1,15 +1,15 @@
-import type { ComponentProps, FC } from "react";
-import { createContext, useContext, useEffect, useState } from "react";
-import { useControllableState } from "@radix-ui/react-use-controllable-state";
-import { BrainIcon, ChevronDownIcon } from "lucide-react";
+import type { ComponentProps, FC } from 'react';
+import { createContext, useContext, useEffect, useState } from 'react';
+import { useControllableState } from '@radix-ui/react-use-controllable-state';
+import { BrainIcon, ChevronDownIcon } from 'lucide-react';
 
 import {
   Collapsible,
   CollapsibleContent,
   CollapsibleTrigger,
-} from "@/components/ui/collapsible";
-import { cn } from "@/lib/utils";
-import { Response } from "@/registry/components/response";
+} from '@/components/ui/collapsible';
+import { cn } from '@/lib/utils';
+import { Response } from '@/registry/components/response';
 
 interface ReasoningContextValue {
   isStreaming: boolean;
@@ -23,7 +23,7 @@ const ReasoningContext = createContext<ReasoningContextValue | null>(null);
 const useReasoning = () => {
   const context = useContext(ReasoningContext);
   if (!context) {
-    throw new Error("Reasoning components must be used within Reasoning");
+    throw new Error('Reasoning components must be used within Reasoning');
   }
   return context;
 };
@@ -97,14 +97,12 @@ const Reasoning: FC<ReasoningProps> = ({
 
   return (
     <ReasoningContext.Provider
-      value={{ isStreaming, isOpen, setIsOpen, duration }}
-    >
+      value={{ isStreaming, isOpen, setIsOpen, duration }}>
       <Collapsible
-        className={cn("not-prose mb-4", className)}
+        className={cn('not-prose mb-4', className)}
         onOpenChange={handleOpenChange}
         open={isOpen}
-        {...props}
-      >
+        {...props}>
         {children}
       </Collapsible>
     </ReasoningContext.Provider>
@@ -127,14 +125,13 @@ const ReasoningTrigger: FC<ReasoningTriggerProps> = ({
   return (
     <CollapsibleTrigger
       className={cn(
-        "flex items-center gap-2 text-muted-foreground text-sm",
+        'flex items-center gap-2 text-muted-foreground text-sm',
         className
       )}
-      {...props}
-    >
+      {...props}>
       {children ?? (
         <>
-          <BrainIcon className="size-4" />
+          <BrainIcon className='size-4' />
           {isStreaming || duration === 0 ? (
             <p>Thinking...</p>
           ) : (
@@ -142,8 +139,8 @@ const ReasoningTrigger: FC<ReasoningTriggerProps> = ({
           )}
           <ChevronDownIcon
             className={cn(
-              "size-4 text-muted-foreground transition-transform",
-              isOpen ? "rotate-180" : "rotate-0"
+              'size-4 text-muted-foreground transition-transform',
+              isOpen ? 'rotate-180' : 'rotate-0'
             )}
           />
         </>
@@ -165,13 +162,12 @@ const ReasoningContent: FC<ReasoningContentProps> = ({
 }) => (
   <CollapsibleContent
     className={cn(
-      "mt-4 text-sm",
-      "data-[state=closed]:fade-out-0 data-[state=closed]:slide-out-to-top-2 data-[state=open]:slide-in-from-top-2 text-popover-foreground outline-none data-[state=closed]:animate-out data-[state=open]:animate-in",
+      'mt-4 text-sm',
+      'data-[state=closed]:fade-out-0 data-[state=closed]:slide-out-to-top-2 data-[state=open]:slide-in-from-top-2 text-popover-foreground outline-none data-[state=closed]:animate-out data-[state=open]:animate-in',
       className
     )}
-    {...props}
-  >
-    <Response className="grid gap-2">{children}</Response>
+    {...props}>
+    <Response className='grid gap-2'>{children}</Response>
   </CollapsibleContent>
 );
 

@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/interactive-supports-focus */
-"use client";
-import type { KeyboardEvent, MouseEvent, ReactElement, ReactNode } from "react";
+'use client';
+import type { KeyboardEvent, MouseEvent, ReactElement, ReactNode } from 'react';
 import {
   Children,
   cloneElement,
@@ -10,11 +10,11 @@ import {
   useEffect,
   useRef,
   useState,
-} from "react";
-import { useControllableState } from "@radix-ui/react-use-controllable-state";
-import { type LucideProps, StarIcon } from "lucide-react";
+} from 'react';
+import { useControllableState } from '@radix-ui/react-use-controllable-state';
+import { type LucideProps, StarIcon } from 'lucide-react';
 
-import { cn } from "@/lib/utils";
+import { cn } from '@/lib/utils';
 interface RatingContextValue {
   value: number;
   readOnly: boolean;
@@ -32,7 +32,7 @@ const RatingContext = createContext<RatingContextValue | null>(null);
 const useRating = () => {
   const context = useContext(RatingContext);
   if (!context) {
-    throw new Error("useRating must be used within a Rating component");
+    throw new Error('useRating must be used within a Rating component');
   }
   return context;
 };
@@ -82,9 +82,9 @@ const RatingButton = ({
   return (
     <button
       className={cn(
-        "rounded-full focus:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
-        "p-0.5",
-        readOnly && "cursor-default",
+        'rounded-full focus:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2',
+        'p-0.5',
+        readOnly && 'cursor-default',
         className
       )}
       disabled={readOnly}
@@ -94,16 +94,15 @@ const RatingButton = ({
       onKeyDown={handleKeyDown}
       onMouseEnter={handleMouseEnter}
       tabIndex={tabIndex}
-      type="button"
-    >
+      type='button'>
       {cloneElement(icon, {
         size,
         className: cn(
-          "transition-colors duration-200",
-          isActive && "fill-current",
-          !readOnly && "cursor-pointer"
+          'transition-colors duration-200',
+          isActive && 'fill-current',
+          !readOnly && 'cursor-pointer'
         ),
-        "aria-hidden": "true",
+        'aria-hidden': 'true',
       })}
     </button>
   );
@@ -158,14 +157,14 @@ const Rating = ({
       const total = Children.count(children);
       let newValue = focusedStar ?? value;
       switch (event.key) {
-        case "ArrowRight":
+        case 'ArrowRight':
           if (event.shiftKey || event.metaKey) {
             newValue = total;
           } else {
             newValue = Math.min(total, newValue + 1);
           }
           break;
-        case "ArrowLeft":
+        case 'ArrowLeft':
           if (event.shiftKey || event.metaKey) {
             newValue = 1;
           } else {
@@ -183,7 +182,7 @@ const Rating = ({
   );
   useEffect(() => {
     if (focusedStar !== null && containerRef.current) {
-      const buttons = containerRef.current.querySelectorAll("button");
+      const buttons = containerRef.current.querySelectorAll('button');
       buttons[focusedStar - 1].focus();
     }
   }, [focusedStar]);
@@ -200,15 +199,14 @@ const Rating = ({
   return (
     <RatingContext.Provider value={contextValue}>
       <div
-        aria-label="Rating"
-        className={cn("inline-flex items-center gap-0.5", className)}
+        aria-label='Rating'
+        className={cn('inline-flex items-center gap-0.5', className)}
         onMouseLeave={() => {
           setHoverValue(null);
         }}
         ref={containerRef}
-        role="radiogroup"
-        {...props}
-      >
+        role='radiogroup'
+        {...props}>
         {Children.map(children, (child, index) => {
           if (!child) {
             return null;

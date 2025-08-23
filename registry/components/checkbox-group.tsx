@@ -1,8 +1,8 @@
-import { type FC, useCallback, useMemo } from "react";
-import type { CheckedState } from "@radix-ui/react-checkbox";
-import { cva, type VariantProps } from "class-variance-authority";
+import { type FC, useCallback, useMemo } from 'react';
+import type { CheckedState } from '@radix-ui/react-checkbox';
+import { cva, type VariantProps } from 'class-variance-authority';
 
-import { Checkbox } from "@/components/ui/checkbox";
+import { Checkbox } from '@/components/ui/checkbox';
 
 export interface CheckboxGroupItemOption {
   label?: string;
@@ -10,19 +10,19 @@ export interface CheckboxGroupItemOption {
   disabled?: boolean;
 }
 
-const checkboxGroupVariants = cva("relative flex", {
+const checkboxGroupVariants = cva('relative flex', {
   variants: {
     orientation: {
-      horizontal: "flex-row gap-2 items-center",
-      vertical: "flex-col gap-2",
+      horizontal: 'flex-row gap-2 items-center',
+      vertical: 'flex-col gap-2',
     },
     reverse: {
-      horizontal: "flex-row-reverse justify-end",
-      vertical: "flex-col-reverse",
+      horizontal: 'flex-row-reverse justify-end',
+      vertical: 'flex-col-reverse',
     },
   },
   defaultVariants: {
-    orientation: "vertical",
+    orientation: 'vertical',
   },
 });
 
@@ -34,11 +34,11 @@ interface CheckboxGroupProps
 }
 
 const labelVariants = cva(
-  "text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70",
+  'text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70',
   {
     variants: {
       disabled: {
-        true: "opacity-50",
+        true: 'opacity-50',
       },
     },
     defaultVariants: {
@@ -47,7 +47,7 @@ const labelVariants = cva(
   }
 );
 
-interface CheckboxGroupItemProps extends Omit<CheckboxGroupProps, "options"> {
+interface CheckboxGroupItemProps extends Omit<CheckboxGroupProps, 'options'> {
   option: CheckboxGroupItemOption;
 }
 const CheckboxGroupItem: FC<CheckboxGroupItemProps> = ({
@@ -71,7 +71,7 @@ const CheckboxGroupItem: FC<CheckboxGroupItemProps> = ({
   );
 
   return (
-    <span className="flex items-center gap-2">
+    <span className='flex items-center gap-2'>
       <Checkbox
         id={option.value}
         disabled={option.disabled}
@@ -81,8 +81,7 @@ const CheckboxGroupItem: FC<CheckboxGroupItemProps> = ({
       {option.label && (
         <label
           htmlFor={option.value}
-          className={labelVariants({ disabled: option.disabled })}
-        >
+          className={labelVariants({ disabled: option.disabled })}>
           {option.label}
         </label>
       )}

@@ -1,21 +1,21 @@
-import { type FC, useCallback, useMemo } from "react";
-import Flag from "react-country-flag";
-import { countries } from "@reacture-io/iso-locale/countries";
+import { type FC, useCallback, useMemo } from 'react';
+import Flag from 'react-country-flag';
+import { countries } from '@reacture-io/iso-locale/countries';
 
 import type {
   CmdkFilterHandler,
   ComboboxProps,
-} from "@/registry/components/combobox";
-import Combobox from "@/registry/components/combobox";
+} from '@/registry/components/combobox';
+import Combobox from '@/registry/components/combobox';
 
-type CountryComboboxProps = Omit<ComboboxProps<false>, "options">;
+type CountryComboboxProps = Omit<ComboboxProps<false>, 'options'>;
 
 const CountryCombobox: FC<CountryComboboxProps> = (props) => {
   const options = useMemo(
     () =>
       Object.values(countries).map((country) => ({
         label: (
-          <span className="flex items-center gap-2">
+          <span className='flex items-center gap-2'>
             <Flag countryCode={country.alpha2} /> {country.name}
           </span>
         ),
@@ -42,7 +42,7 @@ const CountryCombobox: FC<CountryComboboxProps> = (props) => {
       {...props}
       options={options}
       onFilter={handleFilter}
-      placeholder="Select a country"
+      placeholder='Select a country'
     />
   );
 };

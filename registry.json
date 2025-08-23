@@ -15,7 +15,8 @@
           "path": "registry/components/combobox.tsx",
           "type": "registry:component"
         }
-      ]
+      ],
+      "categories": ["forms"]
     },
     {
       "name": "multi-combobox",
@@ -29,7 +30,8 @@
           "path": "registry/components/multi-combobox.tsx",
           "type": "registry:component"
         }
-      ]
+      ],
+      "categories": ["forms"]
     },
     {
       "name": "fab",
@@ -76,7 +78,8 @@
           "path": "registry/components/rating.tsx",
           "type": "registry:component"
         }
-      ]
+      ],
+      "categories": ["chat"]
     },
     {
       "name": "color-picker",
@@ -90,7 +93,8 @@
           "path": "registry/components/color-picker.tsx",
           "type": "registry:component"
         }
-      ]
+      ],
+      "categories": ["forms"]
     },
     {
       "name": "dropzone",
@@ -104,7 +108,8 @@
           "path": "registry/components/dropzone.tsx",
           "type": "registry:component"
         }
-      ]
+      ],
+      "categories": ["forms"]
     },
     {
       "name": "radio-group",
@@ -123,7 +128,7 @@
           "type": "registry:component"
         }
       ],
-      "categories": ["form", "blocks"]
+      "categories": ["forms"]
     },
     {
       "name": "checkbox-group",
@@ -137,7 +142,8 @@
           "path": "registry/components/checkbox-group.tsx",
           "type": "registry:component"
         }
-      ]
+      ],
+      "categories": ["forms"]
     },
     {
       "name": "country-combobox",
@@ -151,7 +157,8 @@
           "path": "registry/components/country-combobox.tsx",
           "type": "registry:component"
         }
-      ]
+      ],
+      "categories": ["forms"]
     },
     {
       "name": "language-combobox",
@@ -159,7 +166,14 @@
       "title": "Language Combobox",
       "description": "A language combobox component",
       "dependencies": ["@reacture-io/iso-locale", "iso-639-1"],
-      "registryDependencies": ["https://faktion-ui.vercel.app/r/combobox"]
+      "registryDependencies": ["https://faktion-ui.vercel.app/r/combobox"],
+      "files": [
+        {
+          "path": "registry/components/language-combobox.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "categories": ["forms"]
     },
     {
       "name": "branch",
@@ -173,7 +187,8 @@
           "path": "registry/components/branch.tsx",
           "type": "registry:component"
         }
-      ]
+      ],
+      "categories": ["chat"]
     },
     {
       "name": "code-block",
@@ -187,7 +202,8 @@
           "path": "registry/components/code-block.tsx",
           "type": "registry:component"
         }
-      ]
+      ],
+      "categories": ["chat"]
     },
     {
       "name": "conversation",
@@ -201,7 +217,8 @@
           "path": "registry/components/conversation.tsx",
           "type": "registry:component"
         }
-      ]
+      ],
+      "categories": ["chat"]
     },
     {
       "name": "image",
@@ -215,7 +232,8 @@
           "path": "registry/components/image.tsx",
           "type": "registry:component"
         }
-      ]
+      ],
+      "categories": ["chat"]
     },
     {
       "name": "inline-citation",
@@ -229,7 +247,8 @@
           "path": "registry/components/inline-citation.tsx",
           "type": "registry:component"
         }
-      ]
+      ],
+      "categories": ["chat"]
     },
     {
       "name": "loader",
@@ -237,7 +256,14 @@
       "title": "Loader",
       "description": "A loader component",
       "dependencies": [],
-      "registryDependencies": []
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/components/loader.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "categories": ["chat"]
     },
     {
       "name": "message",
@@ -245,7 +271,14 @@
       "title": "Message",
       "description": "A message component",
       "dependencies": ["ai"],
-      "registryDependencies": ["avatar"]
+      "registryDependencies": ["avatar"],
+      "files": [
+        {
+          "path": "registry/components/message.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "categories": ["chat"]
     },
     {
       "name": "prompt-input",
@@ -259,7 +292,8 @@
           "path": "registry/components/prompt-input.tsx",
           "type": "registry:component"
         }
-      ]
+      ],
+      "categories": ["chat"]
     },
     {
       "name": "reasoning",
@@ -273,7 +307,14 @@
       "registryDependencies": [
         "collapsible",
         "https://faktion-ui.vercel.app/r/response"
-      ]
+      ],
+      "files": [
+        {
+          "path": "registry/components/reasoning.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "categories": ["chat"]
     },
     {
       "name": "response",
@@ -287,7 +328,8 @@
           "path": "registry/components/response.tsx",
           "type": "registry:component"
         }
-      ]
+      ],
+      "categories": ["chat"]
     },
     {
       "name": "sources",
@@ -301,7 +343,8 @@
           "path": "registry/components/sources.tsx",
           "type": "registry:component"
         }
-      ]
+      ],
+      "categories": ["chat"]
     },
     {
       "name": "suggestion",
@@ -309,7 +352,14 @@
       "title": "Suggestion",
       "description": "A suggestion component",
       "dependencies": ["lucide-react"],
-      "registryDependencies": ["button", "scroll-area"]
+      "registryDependencies": ["button", "scroll-area"],
+      "files": [
+        {
+          "path": "registry/components/suggestion.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "categories": ["chat"]
     },
     {
       "name": "status",
@@ -323,7 +373,8 @@
           "path": "registry/components/status.tsx",
           "type": "registry:component"
         }
-      ]
+      ],
+      "categories": ["chat"]
     },
     {
       "name": "task",
@@ -337,7 +388,8 @@
           "path": "registry/components/task.tsx",
           "type": "registry:component"
         }
-      ]
+      ],
+      "categories": ["chat"]
     },
     {
       "name": "tool",
@@ -351,7 +403,8 @@
           "path": "registry/components/tool.tsx",
           "type": "registry:component"
         }
-      ]
+      ],
+      "categories": ["chat"]
     },
     {
       "name": "web-preview",
@@ -365,7 +418,8 @@
           "path": "registry/components/web-preview.tsx",
           "type": "registry:component"
         }
-      ]
+      ],
+      "categories": ["chat"]
     },
     {
       "name": "use-composition",
@@ -380,7 +434,7 @@
           "type": "registry:hook"
         }
       ],
-      "categories": ["blocks"]
+      "categories": ["hooks"]
     }
   ]
 }

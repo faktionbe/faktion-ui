@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import {
   type ElementRef,
@@ -7,11 +7,11 @@ import {
   useMemo,
   useRef,
   useState,
-} from "react";
-import { Command as CommandPrimitive } from "cmdk";
-import { Check, ChevronsUpDown, Plus } from "lucide-react";
+} from 'react';
+import { Command as CommandPrimitive } from 'cmdk';
+import { Check, ChevronsUpDown, Plus } from 'lucide-react';
 
-import { Button } from "@/components/ui/button";
+import { Button } from '@/components/ui/button';
 import {
   Command,
   CommandEmpty,
@@ -19,13 +19,13 @@ import {
   CommandInput,
   CommandItem,
   CommandList,
-} from "@/components/ui/command";
+} from '@/components/ui/command';
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
-} from "@/components/ui/popover";
-import { cn } from "@/lib/utils";
+} from '@/components/ui/popover';
+import { cn } from '@/lib/utils';
 
 /**
  * Copied straight from `cmdk`
@@ -80,7 +80,7 @@ const Combobox = <Grouped extends boolean>({
 
   const handleFilter: CmdkFilterHandler = useCallback(
     (itemValue, search, keywords) => {
-      if (typeof onFilter === "function") {
+      if (typeof onFilter === 'function') {
         return onFilter(itemValue, search, keywords);
       }
       const hasKeyword = keywords?.some((keyword) =>
@@ -92,7 +92,7 @@ const Combobox = <Grouped extends boolean>({
       const label = _options.find(
         (option) => option.value === itemValue
       )?.label;
-      if (typeof label !== "string") {
+      if (typeof label !== 'string') {
         return 0;
       }
       return label.toLowerCase().includes(search.toLowerCase()) ? 1 : 0;
@@ -109,7 +109,7 @@ const Combobox = <Grouped extends boolean>({
   );
 
   const handleAddOption = useCallback(() => {
-    if (typeof onAddOption === "function" && inputRef.current) {
+    if (typeof onAddOption === 'function' && inputRef.current) {
       const _value = inputRef.current.value;
       if (_value) {
         onAddOption(_value);
@@ -129,13 +129,13 @@ const Combobox = <Grouped extends boolean>({
   }, [value, _options]);
 
   const allowCustomOptions = useMemo(
-    () => typeof onAddOption === "function",
+    () => typeof onAddOption === 'function',
     [onAddOption]
   );
 
   const groups = useMemo(() => {
     if (!grouped) {
-      return { "": _options };
+      return { '': _options };
     }
     const _groups: Record<string, Array<GroupedOption>> = {};
     for (const option of _options as Array<GroupedOption>) {
@@ -149,32 +149,32 @@ const Combobox = <Grouped extends boolean>({
   }, [grouped, _options]);
 
   return (
-    <Popover open={open} onOpenChange={setOpen}>
+    <Popover
+      open={open}
+      onOpenChange={setOpen}>
       <PopoverTrigger asChild>
         <Button
-          className={cn(className, "flex flex-wrap justify-start gap-1")}
-          variant="outline"
-          role="combobox"
+          className={cn(className, 'flex flex-wrap justify-start gap-1')}
+          variant='outline'
+          role='combobox'
           aria-expanded={open}
-          disabled={disabled}
-        >
+          disabled={disabled}>
           {selected ?? placeholder}
-          <ChevronsUpDown className="opacity-50" />
+          <ChevronsUpDown className='opacity-50' />
         </Button>
       </PopoverTrigger>
-      <PopoverContent className="w-full p-0">
+      <PopoverContent className='w-full p-0'>
         <Command filter={handleFilter}>
           <CommandInput ref={inputRef} />
           <CommandList>
             {allowCustomOptions ? (
-              <CommandEmpty className={"flex flex-col items-center p-1"}>
-                <span className="text-sm">{empty}</span>
+              <CommandEmpty className={'flex flex-col items-center p-1'}>
+                <span className='text-sm'>{empty}</span>
                 <Button
-                  variant={"ghost"}
-                  size={"sm"}
-                  className="m-auto"
-                  onClick={handleAddOption}
-                >
+                  variant={'ghost'}
+                  size={'sm'}
+                  className='m-auto'
+                  onClick={handleAddOption}>
                   <Plus />
                   Add Option
                 </Button>
@@ -183,19 +183,20 @@ const Combobox = <Grouped extends boolean>({
               <CommandEmpty>{empty}</CommandEmpty>
             )}
             {Object.entries(groups).map(([group, options]) => (
-              <CommandGroup key={group} heading={group}>
+              <CommandGroup
+                key={group}
+                heading={group}>
                 {options.map((option) => (
                   <CommandItem
                     key={option.value}
                     value={option.value}
                     keywords={option.keywords}
-                    onSelect={handleSelect}
-                  >
+                    onSelect={handleSelect}>
                     {option.label}
                     <Check
                       className={cn(
-                        "ml-auto",
-                        value === option.value ? "opacity-100" : "opacity-0"
+                        'ml-auto',
+                        value === option.value ? 'opacity-100' : 'opacity-0'
                       )}
                     />
                   </CommandItem>

@@ -1,12 +1,12 @@
-import { type FC, useCallback, useMemo } from "react";
-import { languages } from "@reacture-io/iso-locale/languages";
+import { type FC, useCallback, useMemo } from 'react';
+import { languages } from '@reacture-io/iso-locale/languages';
 
 import Combobox, {
   type CmdkFilterHandler,
   type ComboboxProps,
-} from "@/registry/components/combobox";
+} from '@/registry/components/combobox';
 
-interface LanguageComboboxProps extends Omit<ComboboxProps<false>, "options"> {
+interface LanguageComboboxProps extends Omit<ComboboxProps<false>, 'options'> {
   native?: boolean;
 }
 const LanguageCombobox: FC<LanguageComboboxProps> = ({ native, ...props }) => {
@@ -38,7 +38,7 @@ const LanguageCombobox: FC<LanguageComboboxProps> = ({ native, ...props }) => {
       {...props}
       options={options}
       onFilter={handleFilter}
-      placeholder="Select a language"
+      placeholder='Select a language'
     />
   );
 };
