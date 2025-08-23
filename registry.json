@@ -122,7 +122,8 @@
           "path": "registry/components/radio-group.tsx",
           "type": "registry:component"
         }
-      ]
+      ],
+      "categories": ["form", "blocks"]
     },
     {
       "name": "checkbox-group",
@@ -378,7 +379,8 @@
           "path": "registry/hooks/use-composition.tsx",
           "type": "registry:hook"
         }
-      ]
+      ],
+      "categories": ["blocks"]
     }
   ]
 }
