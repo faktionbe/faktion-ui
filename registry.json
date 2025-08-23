@@ -289,15 +289,15 @@
       ]
     },
     {
-      "name": "source",
+      "name": "sources",
       "type": "registry:component",
-      "title": "Source",
+      "title": "Sources",
       "description": "A source component",
       "dependencies": ["lucide-react"],
       "registryDependencies": ["collapsible"],
       "files": [
         {
-          "path": "registry/components/source.tsx",
+          "path": "registry/components/sources.tsx",
           "type": "registry:component"
         }
       ]

@@ -1,6 +1,6 @@
 "use client";
 
-import type { ComponentProps, HTMLAttributes, ReactElement } from "react";
+import type { ComponentProps, FC, HTMLAttributes, ReactElement } from "react";
 import { createContext, useContext, useEffect, useMemo, useState } from "react";
 import type { UIMessage } from "ai";
 import { ChevronLeftIcon, ChevronRightIcon } from "lucide-react";
@@ -34,12 +34,12 @@ export type BranchProps = HTMLAttributes<HTMLDivElement> & {
   onBranchChange?: (branchIndex: number) => void;
 };
 
-export const Branch = ({
+const Branch: FC<BranchProps> = ({
   defaultBranch = 0,
   onBranchChange,
   className,
   ...props
-}: BranchProps) => {
+}) => {
   const [currentBranch, setCurrentBranch] = useState(defaultBranch);
   const [branches, setBranches] = useState<Array<ReactElement>>([]);
 
@@ -81,7 +81,7 @@ export const Branch = ({
 
 export type BranchMessagesProps = HTMLAttributes<HTMLDivElement>;
 
-export const BranchMessages = ({ children, ...props }: BranchMessagesProps) => {
+const BranchMessages: FC<BranchMessagesProps> = ({ children, ...props }) => {
   const { currentBranch, setBranches, branches } = useBranch();
   const childrenArray = useMemo(
     () => (Array.isArray(children) ? children : [children]),
@@ -113,7 +113,7 @@ export type BranchSelectorProps = HTMLAttributes<HTMLDivElement> & {
   from: UIMessage["role"];
 };
 
-export const BranchSelector = ({
+const BranchSelector: FC<BranchSelectorProps> = ({
   className,
   from,
   ...props
@@ -139,11 +139,11 @@ export const BranchSelector = ({
 
 export type BranchPreviousProps = ComponentProps<typeof Button>;
 
-export const BranchPrevious = ({
+const BranchPrevious: FC<BranchPreviousProps> = ({
   className,
   children,
   ...props
-}: BranchPreviousProps) => {
+}) => {
   const { goToPrevious, totalBranches } = useBranch();
 
   return (
@@ -169,11 +169,7 @@ export const BranchPrevious = ({
 
 export type BranchNextProps = ComponentProps<typeof Button>;
 
-export const BranchNext = ({
-  className,
-  children,
-  ...props
-}: BranchNextProps) => {
+const BranchNext: FC<BranchNextProps> = ({ className, children, ...props }) => {
   const { goToNext, totalBranches } = useBranch();
 
   return (
@@ -199,7 +195,7 @@ export const BranchNext = ({
 
 export type BranchPageProps = HTMLAttributes<HTMLSpanElement>;
 
-export const BranchPage = ({ className, ...props }: BranchPageProps) => {
+const BranchPage: FC<BranchPageProps> = ({ className, ...props }) => {
   const { currentBranch, totalBranches } = useBranch();
 
   return (
@@ -214,3 +210,24 @@ export const BranchPage = ({ className, ...props }: BranchPageProps) => {
     </span>
   );
 };
+
+interface BranchComposition {
+  Messages: typeof BranchMessages;
+  Selector: typeof BranchSelector;
+  Previous: typeof BranchPrevious;
+  Page: typeof BranchPage;
+  Next: typeof BranchNext;
+}
+
+const RootWithComposition: BranchComposition & typeof Branch = Object.assign(
+  Branch,
+  {
+    Messages: BranchMessages,
+    Selector: BranchSelector,
+    Previous: BranchPrevious,
+    Page: BranchPage,
+    Next: BranchNext,
+  }
+);
+
+export { RootWithComposition as Branch };

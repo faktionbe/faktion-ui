@@ -3,6 +3,7 @@
 import {
   type ComponentProps,
   createContext,
+  type FC,
   useCallback,
   useContext,
   useEffect,
@@ -26,10 +27,7 @@ import { cn } from "@/lib/utils";
 
 export type InlineCitationProps = ComponentProps<"span">;
 
-export const InlineCitation = ({
-  className,
-  ...props
-}: InlineCitationProps) => (
+const InlineCitation: FC<InlineCitationProps> = ({ className, ...props }) => (
   <span
     className={cn("group inline items-center gap-1", className)}
     {...props}
@@ -38,10 +36,10 @@ export const InlineCitation = ({
 
 export type InlineCitationTextProps = ComponentProps<"span">;
 
-export const InlineCitationText = ({
+const InlineCitationText: FC<InlineCitationTextProps> = ({
   className,
   ...props
-}: InlineCitationTextProps) => (
+}) => (
   <span
     className={cn("transition-colors group-hover:bg-accent", className)}
     {...props}
@@ -50,7 +48,7 @@ export const InlineCitationText = ({
 
 export type InlineCitationCardProps = ComponentProps<typeof HoverCard>;
 
-export const InlineCitationCard = (props: InlineCitationCardProps) => (
+const InlineCitationCard: FC<InlineCitationCardProps> = (props) => (
   <HoverCard closeDelay={0} openDelay={0} {...props} />
 );
 
@@ -58,11 +56,11 @@ export type InlineCitationCardTriggerProps = ComponentProps<typeof Badge> & {
   sources: [string, ...Array<string>];
 };
 
-export const InlineCitationCardTrigger = ({
+const InlineCitationCardTrigger: FC<InlineCitationCardTriggerProps> = ({
   sources,
   className,
   ...props
-}: InlineCitationCardTriggerProps) => (
+}) => (
   <HoverCardTrigger asChild>
     <Badge
       className={cn("ml-1 rounded-full", className)}
@@ -83,10 +81,10 @@ export const InlineCitationCardTrigger = ({
 
 export type InlineCitationCardBodyProps = ComponentProps<"div">;
 
-export const InlineCitationCardBody = ({
+const InlineCitationCardBody: FC<InlineCitationCardBodyProps> = ({
   className,
   ...props
-}: InlineCitationCardBodyProps) => (
+}) => (
   <HoverCardContent className={cn("relative w-80 p-0", className)} {...props} />
 );
 
@@ -99,11 +97,11 @@ const useCarouselApi = () => {
 
 export type InlineCitationCarouselProps = ComponentProps<typeof Carousel>;
 
-export const InlineCitationCarousel = ({
+const InlineCitationCarousel: FC<InlineCitationCarouselProps> = ({
   className,
   children,
   ...props
-}: InlineCitationCarouselProps) => {
+}) => {
   const [api, setApi] = useState<CarouselApi>();
 
   return (
@@ -117,16 +115,16 @@ export const InlineCitationCarousel = ({
 
 export type InlineCitationCarouselContentProps = ComponentProps<"div">;
 
-export const InlineCitationCarouselContent = (
-  props: InlineCitationCarouselContentProps
+const InlineCitationCarouselContent: FC<InlineCitationCarouselContentProps> = (
+  props
 ) => <CarouselContent {...props} />;
 
 export type InlineCitationCarouselItemProps = ComponentProps<"div">;
 
-export const InlineCitationCarouselItem = ({
+const InlineCitationCarouselItem: FC<InlineCitationCarouselItemProps> = ({
   className,
   ...props
-}: InlineCitationCarouselItemProps) => (
+}) => (
   <CarouselItem
     className={cn("w-full space-y-2 p-4 pl-8", className)}
     {...props}
@@ -135,10 +133,10 @@ export const InlineCitationCarouselItem = ({
 
 export type InlineCitationCarouselHeaderProps = ComponentProps<"div">;
 
-export const InlineCitationCarouselHeader = ({
+const InlineCitationCarouselHeader: FC<InlineCitationCarouselHeaderProps> = ({
   className,
   ...props
-}: InlineCitationCarouselHeaderProps) => (
+}) => (
   <div
     className={cn(
       "flex items-center justify-between gap-2 rounded-t-md bg-secondary p-2",
@@ -150,7 +148,7 @@ export const InlineCitationCarouselHeader = ({
 
 export type InlineCitationCarouselIndexProps = ComponentProps<"div">;
 
-export const InlineCitationCarouselIndex = ({
+const InlineCitationCarouselIndex: FC<InlineCitationCarouselIndexProps> = ({
   children,
   className,
   ...props
@@ -187,10 +185,10 @@ export const InlineCitationCarouselIndex = ({
 
 export type InlineCitationCarouselPrevProps = ComponentProps<"button">;
 
-export const InlineCitationCarouselPrev = ({
+const InlineCitationCarouselPrev: FC<InlineCitationCarouselPrevProps> = ({
   className,
   ...props
-}: InlineCitationCarouselPrevProps) => {
+}) => {
   const api = useCarouselApi();
 
   const handleClick = useCallback(() => {
@@ -214,10 +212,10 @@ export const InlineCitationCarouselPrev = ({
 
 export type InlineCitationCarouselNextProps = ComponentProps<"button">;
 
-export const InlineCitationCarouselNext = ({
+const InlineCitationCarouselNext: FC<InlineCitationCarouselNextProps> = ({
   className,
   ...props
-}: InlineCitationCarouselNextProps) => {
+}) => {
   const api = useCarouselApi();
 
   const handleClick = useCallback(() => {
@@ -245,14 +243,14 @@ export type InlineCitationSourceProps = ComponentProps<"div"> & {
   description?: string;
 };
 
-export const InlineCitationSource = ({
+const InlineCitationSource: FC<InlineCitationSourceProps> = ({
   title,
   url,
   description,
   className,
   children,
   ...props
-}: InlineCitationSourceProps) => (
+}) => (
   <div className={cn("space-y-1", className)} {...props}>
     {title && (
       <h4 className="truncate font-medium text-sm leading-tight">{title}</h4>
@@ -271,11 +269,11 @@ export const InlineCitationSource = ({
 
 export type InlineCitationQuoteProps = ComponentProps<"blockquote">;
 
-export const InlineCitationQuote = ({
+const InlineCitationQuote: FC<InlineCitationQuoteProps> = ({
   children,
   className,
   ...props
-}: InlineCitationQuoteProps) => (
+}) => (
   <blockquote
     className={cn(
       "border-muted border-l-2 pl-3 text-muted-foreground text-sm italic",
@@ -286,3 +284,38 @@ export const InlineCitationQuote = ({
     {children}
   </blockquote>
 );
+
+interface InlineCitationComposition {
+  Text: typeof InlineCitationText;
+  Card: typeof InlineCitationCard;
+  CardTrigger: typeof InlineCitationCardTrigger;
+  CardBody: typeof InlineCitationCardBody;
+  Carousel: typeof InlineCitationCarousel;
+  CarouselContent: typeof InlineCitationCarouselContent;
+  CarouselItem: typeof InlineCitationCarouselItem;
+  CarouselHeader: typeof InlineCitationCarouselHeader;
+  CarouselIndex: typeof InlineCitationCarouselIndex;
+  CarouselPrev: typeof InlineCitationCarouselPrev;
+  CarouselNext: typeof InlineCitationCarouselNext;
+  Source: typeof InlineCitationSource;
+  Quote: typeof InlineCitationQuote;
+}
+
+const RootWithComposition: InlineCitationComposition & typeof InlineCitation =
+  Object.assign(InlineCitation, {
+    Text: InlineCitationText,
+    Card: InlineCitationCard,
+    CardTrigger: InlineCitationCardTrigger,
+    CardBody: InlineCitationCardBody,
+    Carousel: InlineCitationCarousel,
+    CarouselContent: InlineCitationCarouselContent,
+    CarouselItem: InlineCitationCarouselItem,
+    CarouselHeader: InlineCitationCarouselHeader,
+    CarouselIndex: InlineCitationCarouselIndex,
+    CarouselPrev: InlineCitationCarouselPrev,
+    CarouselNext: InlineCitationCarouselNext,
+    Source: InlineCitationSource,
+    Quote: InlineCitationQuote,
+  });
+
+export { RootWithComposition as InlineCitation };

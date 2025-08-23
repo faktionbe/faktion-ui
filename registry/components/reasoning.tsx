@@ -1,5 +1,5 @@
-import type { ComponentProps } from "react";
-import { createContext, memo, useContext, useEffect, useState } from "react";
+import type { ComponentProps, FC } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 import { useControllableState } from "@radix-ui/react-use-controllable-state";
 import { BrainIcon, ChevronDownIcon } from "lucide-react";
 
@@ -38,7 +38,7 @@ export type ReasoningProps = ComponentProps<typeof Collapsible> & {
 
 const AUTO_CLOSE_DELAY = 1000;
 
-export const Reasoning = ({
+const Reasoning: FC<ReasoningProps> = ({
   className,
   isStreaming = false,
   open,
@@ -49,7 +49,7 @@ export const Reasoning = ({
   duration: durationProp,
   children,
   ...props
-}: ReasoningProps) => {
+}) => {
   const [isOpen, setIsOpen] = useControllableState({
     prop: open,
     defaultProp: defaultOpen,
@@ -117,38 +117,40 @@ export type ReasoningTriggerProps = ComponentProps<
   title?: string;
 };
 
-export const ReasoningTrigger = memo(
-  ({ className, children, ...props }: ReasoningTriggerProps) => {
-    const { isStreaming, isOpen, duration } = useReasoning();
+const ReasoningTrigger: FC<ReasoningTriggerProps> = ({
+  className,
+  children,
+  ...props
+}) => {
+  const { isStreaming, isOpen, duration } = useReasoning();
 
-    return (
-      <CollapsibleTrigger
-        className={cn(
-          "flex items-center gap-2 text-muted-foreground text-sm",
-          className
-        )}
-        {...props}
-      >
-        {children ?? (
-          <>
-            <BrainIcon className="size-4" />
-            {isStreaming || duration === 0 ? (
-              <p>Thinking...</p>
-            ) : (
-              <p>Thought for {duration} seconds</p>
+  return (
+    <CollapsibleTrigger
+      className={cn(
+        "flex items-center gap-2 text-muted-foreground text-sm",
+        className
+      )}
+      {...props}
+    >
+      {children ?? (
+        <>
+          <BrainIcon className="size-4" />
+          {isStreaming || duration === 0 ? (
+            <p>Thinking...</p>
+          ) : (
+            <p>Thought for {duration} seconds</p>
+          )}
+          <ChevronDownIcon
+            className={cn(
+              "size-4 text-muted-foreground transition-transform",
+              isOpen ? "rotate-180" : "rotate-0"
             )}
-            <ChevronDownIcon
-              className={cn(
-                "size-4 text-muted-foreground transition-transform",
-                isOpen ? "rotate-180" : "rotate-0"
-              )}
-            />
-          </>
-        )}
-      </CollapsibleTrigger>
-    );
-  }
-);
+          />
+        </>
+      )}
+    </CollapsibleTrigger>
+  );
+};
 
 export type ReasoningContentProps = ComponentProps<
   typeof CollapsibleContent
@@ -156,21 +158,31 @@ export type ReasoningContentProps = ComponentProps<
   children: string;
 };
 
-export const ReasoningContent = memo(
-  ({ className, children, ...props }: ReasoningContentProps) => (
-    <CollapsibleContent
-      className={cn(
-        "mt-4 text-sm",
-        "data-[state=closed]:fade-out-0 data-[state=closed]:slide-out-to-top-2 data-[state=open]:slide-in-from-top-2 text-popover-foreground outline-none data-[state=closed]:animate-out data-[state=open]:animate-in",
-        className
-      )}
-      {...props}
-    >
-      <Response className="grid gap-2">{children}</Response>
-    </CollapsibleContent>
-  )
+const ReasoningContent: FC<ReasoningContentProps> = ({
+  className,
+  children,
+  ...props
+}) => (
+  <CollapsibleContent
+    className={cn(
+      "mt-4 text-sm",
+      "data-[state=closed]:fade-out-0 data-[state=closed]:slide-out-to-top-2 data-[state=open]:slide-in-from-top-2 text-popover-foreground outline-none data-[state=closed]:animate-out data-[state=open]:animate-in",
+      className
+    )}
+    {...props}
+  >
+    <Response className="grid gap-2">{children}</Response>
+  </CollapsibleContent>
 );
 
-Reasoning.displayName = "Reasoning";
-ReasoningTrigger.displayName = "ReasoningTrigger";
-ReasoningContent.displayName = "ReasoningContent";
+interface ReasoningComposition {
+  Trigger: typeof ReasoningTrigger;
+  Content: typeof ReasoningContent;
+}
+
+const RootWithComposition: ReasoningComposition & typeof Reasoning =
+  Object.assign(Reasoning, {
+    Trigger: ReasoningTrigger,
+    Content: ReasoningContent,
+  });
+export { RootWithComposition as Reasoning };

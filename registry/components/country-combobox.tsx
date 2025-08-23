@@ -11,7 +11,6 @@ import Combobox from "@/registry/components/combobox";
 type CountryComboboxProps = Omit<ComboboxProps<false>, "options">;
 
 const CountryCombobox: FC<CountryComboboxProps> = (props) => {
-  console.log(Object.entries(countries));
   const options = useMemo(
     () =>
       Object.values(countries).map((country) => ({
