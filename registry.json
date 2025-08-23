@@ -64,6 +64,22 @@
       ]
     },
     {
+      "name": "toggle",
+      "type": "registry:component",
+      "title": "Toggle",
+      "description": "A toggle component",
+      "dependencies": [],
+      "registryDependencies": [
+        "https://faktion-ui.vercel.app/r/use-composition"
+      ],
+      "files": [
+        {
+          "path": "registry/components/toggle.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
       "name": "rating",
       "type": "registry:component",
       "title": "Rating",

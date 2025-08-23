@@ -102,7 +102,7 @@ const Component: FC<ComponentProps> = ({
             <Toggle.Tab value="code">Code</Toggle.Tab>
           </Toggle>
         )}
-        <Install component={name} />
+        <Install component={`https://faktion-ui.vercel.app/r/${name}.json`} />
       </div>
     </div>
   );
