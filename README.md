@@ -1,23 +1,15 @@
-# registry-template
+# Registry
 
-You can use the `shadcn` CLI to run your own component registry. Running your own
-component registry allows you to distribute your custom components, hooks, pages, and
-other files to any React project.
+- https://faktion-ui-ksti.vercel.app/
+- https://ui.faktion.com/
 
-> [!IMPORTANT]  
-> This template uses Tailwind v3. For Tailwind v4, see [registry-template](https://github.com/shadcn-ui/registry-template-v4). **We recommend using the v4 version for new registries**.
+## Usage
 
-## Getting Started
+Visit the production build on [faktion ui](https://ui.faktion.com/) and use one of the commands. Usage & preview are available.
 
-This is a template for creating a custom registry using Next.js.
+## Contribute
 
-- The template uses a `registry.json` file to define components and their files.
-- The `shadcn build` command is used to build the registry.
-- The registry items are served as static files under `public/r/[name].json`.
-- The template also includes a route handler for serving registry items.
-- Every registry item are compatible with the `shadcn` CLI.
-- We have also added v0 integration using the `Open in v0` api.
-
-## Documentation
-
-Visit the [shadcn documentation](https://ui.shadcn.com/docs/registry) to view the full documentation.
+- Use composition as much as possible, this is the most scalable pattern to build complex components. 
+- Use context for shared state / prop drilling when things are getting complicated. 
+- Make sure `pnpm build` succeeds before creating a pull request
+- Create your component under `registry`. Add documentation under `app/page.tsx`. Extend `registry.json` so shadcn CLI can find it. 
