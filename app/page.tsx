@@ -3,10 +3,13 @@
 import { Plus, Rocket } from "lucide-react";
 
 import Component from "@/components/component";
+import CheckboxGroup from "@/registry/components/checkbox-group";
 import { ColorPicker } from "@/registry/components/color-picker";
 import Combobox from "@/registry/components/combobox";
+import CountryCombobox from "@/registry/components/country-combobox";
 import { Dropzone } from "@/registry/components/dropzone";
 import Fab from "@/registry/components/fab";
+import LanguageCombobox from "@/registry/components/language-combobox";
 import MultiCombobox from "@/registry/components/multi-combobox";
 import { Notification } from "@/registry/components/notification";
 import { RadioGroup } from "@/registry/components/radio-group";
@@ -137,6 +140,53 @@ const Home = () => (
             { label: "Option 1", value: "option1" },
             { label: "Option 2", value: "option2" },
           ]}
+        />
+      </Component>
+      <Component name="checkbox-group" description="A checkbox group component">
+        <span>Vertical</span>
+        <CheckboxGroup
+          checked={["option1"]}
+          onChange={() => {
+            console.log("onChange");
+          }}
+          options={[
+            { label: "Option 1", value: "option1" },
+            { label: "Option 2", value: "option2" },
+          ]}
+        />
+        <span>Horizontal</span>
+        <CheckboxGroup
+          orientation="horizontal"
+          checked={["option1"]}
+          onChange={() => {
+            console.log("onChange");
+          }}
+          options={[
+            { label: "Option 1", value: "option1" },
+            { label: "Option 2", value: "option2" },
+          ]}
+        />
+      </Component>
+      <Component
+        name="country-combobox"
+        description="A country combobox component"
+      >
+        <CountryCombobox
+          value="us"
+          onChange={(value) => {
+            console.log(value);
+          }}
+        />
+      </Component>
+      <Component
+        name="language-combobox"
+        description="A language combobox component"
+      >
+        <LanguageCombobox
+          value="en"
+          onChange={(value) => {
+            console.log(value);
+          }}
         />
       </Component>
     </main>

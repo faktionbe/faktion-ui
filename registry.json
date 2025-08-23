@@ -125,6 +125,42 @@
       ]
     },
     {
+      "name": "checkbox-group",
+      "type": "registry:component",
+      "title": "Checkbox Group",
+      "description": "A checkbox group component",
+      "dependencies": ["@radix-ui/react-checkbox", "class-variance-authority"],
+      "registryDependencies": ["checkbox"],
+      "files": [
+        {
+          "path": "registry/components/checkbox-group.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "country-combobox",
+      "type": "registry:component",
+      "title": "Country Combobox",
+      "description": "A country combobox component",
+      "dependencies": ["@reacture-io/iso-locale", "react-country-flag"],
+      "registryDependencies": ["https://faktion-ui.vercel.app/r/combobox"],
+      "files": [
+        {
+          "path": "registry/components/country-combobox.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "language-combobox",
+      "type": "registry:component",
+      "title": "Language Combobox",
+      "description": "A language combobox component",
+      "dependencies": ["@reacture-io/iso-locale", "iso-639-1"],
+      "registryDependencies": ["https://faktion-ui.vercel.app/r/combobox"]
+    },
+    {
       "name": "use-composition",
       "type": "registry:hook",
       "title": "Use Composition",
