@@ -53,7 +53,7 @@ const Component: FC<ComponentProps> = ({
         </div>
 
         <div className="flex items-center gap-2">
-          <OpenInV0Button name="hello-world" className="w-fit" />
+          <OpenInV0Button name={name} className="w-fit" />
         </div>
       </div>
 
