@@ -161,6 +161,212 @@
       "registryDependencies": ["https://faktion-ui.vercel.app/r/combobox"]
     },
     {
+      "name": "branch",
+      "type": "registry:component",
+      "title": "Branch",
+      "description": "A branch component",
+      "dependencies": ["ai", "lucide-react"],
+      "registryDependencies": ["button"],
+      "files": [
+        {
+          "path": "registry/components/branch.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "code-block",
+      "type": "registry:component",
+      "title": "Code Block",
+      "description": "A code block component",
+      "dependencies": ["react-syntax-highlighter", "lucide-react"],
+      "registryDependencies": ["button"],
+      "files": [
+        {
+          "path": "registry/components/code-block.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "conversation",
+      "type": "registry:component",
+      "title": "Conversation",
+      "description": "A conversation component",
+      "dependencies": ["use-stick-to-bottom", "lucide-react"],
+      "registryDependencies": ["button"],
+      "files": [
+        {
+          "path": "registry/components/conversation.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "image",
+      "type": "registry:component",
+      "title": "Image",
+      "description": "A image component",
+      "dependencies": ["ai"],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/components/image.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "inline-citation",
+      "type": "registry:component",
+      "title": "Inline Citation",
+      "description": "A inline citation component",
+      "dependencies": ["lucide-react"],
+      "registryDependencies": ["badge", "carousel", "hover-card"],
+      "files": [
+        {
+          "path": "registry/components/inline-citation.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "loader",
+      "type": "registry:component",
+      "title": "Loader",
+      "description": "A loader component",
+      "dependencies": [],
+      "registryDependencies": []
+    },
+    {
+      "name": "message",
+      "type": "registry:component",
+      "title": "Message",
+      "description": "A message component",
+      "dependencies": ["ai"],
+      "registryDependencies": ["avatar"]
+    },
+    {
+      "name": "prompt-input",
+      "type": "registry:component",
+      "title": "Prompt Input",
+      "description": "A prompt input component",
+      "dependencies": ["ai", "lucide-react"],
+      "registryDependencies": ["button", "select", "textarea"],
+      "files": [
+        {
+          "path": "registry/components/prompt-input.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "reasoning",
+      "type": "registry:component",
+      "title": "Reasoning",
+      "description": "A reasoning component",
+      "dependencies": [
+        "@radix-ui/react-use-controllable-state",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "collapsible",
+        "https://faktion-ui.vercel.app/r/response"
+      ]
+    },
+    {
+      "name": "response",
+      "type": "registry:component",
+      "title": "Response",
+      "description": "A response component",
+      "dependencies": ["streamdown"],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/components/response.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "source",
+      "type": "registry:component",
+      "title": "Source",
+      "description": "A source component",
+      "dependencies": ["lucide-react"],
+      "registryDependencies": ["collapsible"],
+      "files": [
+        {
+          "path": "registry/components/source.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "suggestion",
+      "type": "registry:component",
+      "title": "Suggestion",
+      "description": "A suggestion component",
+      "dependencies": ["lucide-react"],
+      "registryDependencies": ["button", "scroll-area"]
+    },
+    {
+      "name": "status",
+      "type": "registry:component",
+      "title": "Status",
+      "description": "A status component",
+      "dependencies": ["class-variance-authority"],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/components/status.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "task",
+      "type": "registry:component",
+      "title": "Task",
+      "description": "A task component",
+      "dependencies": ["lucide-react"],
+      "registryDependencies": ["collapsible"],
+      "files": [
+        {
+          "path": "registry/components/task.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "tool",
+      "type": "registry:component",
+      "title": "Tool",
+      "description": "A tool component",
+      "dependencies": ["ai", "lucide-react"],
+      "registryDependencies": ["collapsible", "badge"],
+      "files": [
+        {
+          "path": "registry/components/tool.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "web-preview",
+      "type": "registry:component",
+      "title": "Web Preview",
+      "description": "A web preview component",
+      "dependencies": ["lucide-react"],
+      "registryDependencies": ["collapsible", "button", "input", "tooltip"],
+      "files": [
+        {
+          "path": "registry/components/web-preview.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
       "name": "use-composition",
       "type": "registry:hook",
       "title": "Use Composition",

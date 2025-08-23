@@ -14,7 +14,7 @@ import MultiCombobox from "@/registry/components/multi-combobox";
 import { Notification } from "@/registry/components/notification";
 import { RadioGroup } from "@/registry/components/radio-group";
 import { Rating } from "@/registry/components/rating";
-
+import { Branch, BranchMessages } from "@/registry/components/branch";
 const Home = () => (
   <div className="max-w-3xl mx-auto flex flex-col min-h-svh px-4 py-8 gap-8">
     <header className="flex flex-col gap-1">
@@ -188,6 +188,11 @@ const Home = () => (
             console.log(value);
           }}
         />
+      </Component>
+      <Component name="branch" description="A branch component">
+        <Branch>
+          <BranchMessages />
+        </Branch>
       </Component>
     </main>
   </div>
