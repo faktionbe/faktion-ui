@@ -3,18 +3,32 @@
 import { Plus, Rocket } from "lucide-react";
 
 import Component from "@/components/component";
+import { Branch, BranchMessages } from "@/registry/components/branch";
 import CheckboxGroup from "@/registry/components/checkbox-group";
+import { CodeBlock } from "@/registry/components/code-block";
 import { ColorPicker } from "@/registry/components/color-picker";
 import Combobox from "@/registry/components/combobox";
+import { Conversation } from "@/registry/components/conversation";
 import CountryCombobox from "@/registry/components/country-combobox";
 import { Dropzone } from "@/registry/components/dropzone";
 import Fab from "@/registry/components/fab";
+import { InlineCitation } from "@/registry/components/inline-citation";
 import LanguageCombobox from "@/registry/components/language-combobox";
+import { Loader } from "@/registry/components/loader";
+import { Message } from "@/registry/components/message";
 import MultiCombobox from "@/registry/components/multi-combobox";
 import { Notification } from "@/registry/components/notification";
+import { PromptInput } from "@/registry/components/prompt-input";
 import { RadioGroup } from "@/registry/components/radio-group";
 import { Rating } from "@/registry/components/rating";
-import { Branch, BranchMessages } from "@/registry/components/branch";
+import { Reasoning } from "@/registry/components/reasoning";
+import { Response } from "@/registry/components/response";
+import { Source } from "@/registry/components/source";
+import Status from "@/registry/components/status";
+import { Suggestion, Suggestions } from "@/registry/components/suggestion";
+import { Task } from "@/registry/components/task";
+import { Tool } from "@/registry/components/tool";
+import { WebPreview } from "@/registry/components/web-preview";
 const Home = () => (
   <div className="max-w-3xl mx-auto flex flex-col min-h-svh px-4 py-8 gap-8">
     <header className="flex flex-col gap-1">
@@ -191,8 +205,134 @@ const Home = () => (
       </Component>
       <Component name="branch" description="A branch component">
         <Branch>
-          <BranchMessages />
+          <BranchMessages>
+            <div key="branch-1">
+              <p>This is branch 1 content</p>
+            </div>
+            <div key="branch-2">
+              <p>This is branch 2 content</p>
+            </div>
+            <div key="branch-3">
+              <p>This is branch 3 content</p>
+            </div>
+          </BranchMessages>
         </Branch>
+      </Component>
+      <Component name="code-block" description="A code block component">
+        <CodeBlock
+          code="const hello = () => console.log('Hello World!');"
+          language="javascript"
+        />
+      </Component>
+      <Component name="conversation" description="A conversation component">
+        <Conversation>
+          <div className="p-4">Sample conversation content</div>
+        </Conversation>
+      </Component>
+      <Component name="image" description="An image component">
+        <div className="w-32 h-32 border rounded-lg flex items-center justify-center">
+          Image placeholder
+        </div>
+      </Component>
+      <Component
+        name="inline-citation"
+        description="An inline citation component"
+      >
+        <div className="p-4 border rounded-lg">
+          <p>
+            This is some text with an{" "}
+            <InlineCitation>inline citation</InlineCitation> in the middle.
+          </p>
+        </div>
+      </Component>
+      <Component name="loader" description="A loader component">
+        <Loader />
+        <Loader size={24} />
+      </Component>
+      <Component name="message" description="A message component">
+        <Message from="user">
+          <Message.Avatar src="/avatar.png" name="User" />
+          <Message.Content>Hello! How can I help you today?</Message.Content>
+        </Message>
+        <Message from="assistant">
+          <Message.Avatar src="/avatar.png" name="Assistant" />
+          <Message.Content>
+            I&apos;m here to assist you with any questions or tasks you might
+            have.
+          </Message.Content>
+        </Message>
+      </Component>
+      <Component name="prompt-input" description="A prompt input component">
+        <PromptInput>
+          <PromptInput.Textarea placeholder="Type your message here..." />
+          <PromptInput.Toolbar>
+            <PromptInput.Tools>
+              <PromptInput.Button>Tool 1</PromptInput.Button>
+              <PromptInput.Button>Tool 2</PromptInput.Button>
+            </PromptInput.Tools>
+            <PromptInput.Submit />
+          </PromptInput.Toolbar>
+        </PromptInput>
+      </Component>
+      <Component name="reasoning" description="A reasoning component">
+        <Reasoning>
+          <p>This is the reasoning behind the response...</p>
+        </Reasoning>
+      </Component>
+      <Component name="response" description="A response component">
+        <Response>This is a sample response from the AI assistant.</Response>
+      </Component>
+      <Component name="source" description="A source component">
+        <Source href="https://example.com" title="Example Source">
+          This is the content of the source document.
+        </Source>
+      </Component>
+      <Component name="status" description="A status component">
+        <div className="flex items-center gap-4">
+          <Status status="online" size="sm" />
+          <span>Online</span>
+          <Status status="offline" size="sm" />
+          <span>Offline</span>
+        </div>
+      </Component>
+      <Component name="suggestion" description="A suggestion component">
+        <Suggestions>
+          <Suggestion
+            suggestion="What is AI?"
+            onClick={(suggestion) => {
+              console.log(suggestion);
+            }}
+          />
+          <Suggestion
+            suggestion="How does machine learning work?"
+            onClick={(suggestion) => {
+              console.log(suggestion);
+            }}
+          />
+          <Suggestion
+            suggestion="Explain neural networks"
+            onClick={(suggestion) => {
+              console.log(suggestion);
+            }}
+          />
+        </Suggestions>
+      </Component>
+      <Component name="task" description="A task component">
+        <Task>
+          This task involves completing the project requirements and
+          documentation.
+        </Task>
+      </Component>
+      <Component name="tool" description="A tool component">
+        <Tool>The calculator tool has been executed successfully.</Tool>
+      </Component>
+      <Component name="web-preview" description="A web preview component">
+        <WebPreview>
+          <div className="p-4 border rounded-lg">
+            <h3 className="font-medium">Example Website</h3>
+            <p className="text-sm text-muted-foreground">https://example.com</p>
+          </div>
+        </WebPreview>
       </Component>
     </main>
   </div>
