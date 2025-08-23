@@ -20,7 +20,7 @@ const Component: FC<ComponentProps> = ({ name, description, children }) => (
 
       <OpenInV0Button name="hello-world" className="w-fit" />
     </div>
-    <div className="flex items-center justify-center min-h-[400px] relative">
+    <div className="flex items-center justify-center min-h-[400px] relative flex-col gap-4">
       {children}
     </div>
     <Install component={name} />

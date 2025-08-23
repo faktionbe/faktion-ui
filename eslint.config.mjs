@@ -1,4 +1,4 @@
-import config from '@reacture-io/eslint-config/react';
+import config from "@faktion-com/eslint-config/react";
 
 const eslintConfig = [...config];
 

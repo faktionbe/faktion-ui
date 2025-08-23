@@ -4,59 +4,44 @@
   "homepage": "https://reacture.io",
   "items": [
     {
-      "name": "hello-world",
+      "name": "combobox",
       "type": "registry:component",
-      "title": "Hello World",
-      "description": "A simple hello world component",
-      "registryDependencies": ["button"],
+      "title": "Combobox",
+      "description": "A combobox component",
+      "dependencies": ["cmdk", "lucide-react"],
+      "registryDependencies": ["command", "popover", "button"],
       "files": [
         {
-          "path": "registry/hello-world/hello-world.tsx",
+          "path": "registry/combobox.tsx",
           "type": "registry:component"
         }
       ]
     },
     {
-      "name": "example-form",
+      "name": "multi-combobox",
       "type": "registry:component",
-      "title": "Example Form",
-      "description": "A contact form with Zod validation.",
-      "dependencies": ["zod"],
-      "registryDependencies": ["button", "input", "label", "textarea", "card"],
+      "title": "Multi Combobox",
+      "description": "A multi combobox component",
+      "dependencies": ["cmdk", "lucide-react"],
+      "registryDependencies": ["badge", "command", "popover", "button"],
       "files": [
         {
-          "path": "registry/example-form/example-form.tsx",
+          "path": "registry/multi-combobox.tsx",
           "type": "registry:component"
         }
       ]
     },
     {
-      "name": "complex-component",
+      "name": "auto-growing-textarea",
       "type": "registry:component",
-      "title": "Complex Component",
-      "description": "A complex component showing hooks, libs and components.",
-      "registryDependencies": ["card"],
+      "title": "Auto Growing Textarea",
+      "description": "A textarea that grows as you type",
+      "dependencies": ["class-variance-authority"],
+      "registryDependencies": [],
       "files": [
         {
-          "path": "registry/complex-component/page.tsx",
-          "type": "registry:page",
-          "target": "app/pokemon/page.tsx"
-        },
-        {
-          "path": "registry/complex-component/components/pokemon-card.tsx",
+          "path": "registry/auto-growing-textarea.tsx",
           "type": "registry:component"
-        },
-        {
-          "path": "registry/complex-component/components/pokemon-image.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "registry/complex-component/lib/pokemon.ts",
-          "type": "registry:lib"
-        },
-        {
-          "path": "registry/complex-component/hooks/use-pokemon.ts",
-          "type": "registry:hook"
         }
       ]
     }
