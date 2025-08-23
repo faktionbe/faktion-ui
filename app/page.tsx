@@ -1,9 +1,16 @@
 "use client";
 
+import { Plus, Rocket } from "lucide-react";
+
 import Component from "@/components/component";
-import AutoGrowingTextArea from "@/registry/auto-growing-textarea";
-import Combobox from "@/registry/combobox";
-import MultiCombobox from "@/registry/multi-combobox";
+import { ColorPicker } from "@/registry/components/color-picker";
+import Combobox from "@/registry/components/combobox";
+import { Dropzone } from "@/registry/components/dropzone";
+import Fab from "@/registry/components/fab";
+import MultiCombobox from "@/registry/components/multi-combobox";
+import { Notification } from "@/registry/components/notification";
+import { RadioGroup } from "@/registry/components/radio-group";
+import { Rating } from "@/registry/components/rating";
 
 const Home = () => (
   <div className="max-w-3xl mx-auto flex flex-col min-h-svh px-4 py-8 gap-8">
@@ -61,15 +68,75 @@ const Home = () => (
           }}
         />
       </Component>
-      <Component
-        name="auto-growing-textarea"
-        description="A textarea that grows as you type"
-      >
-        <AutoGrowingTextArea
-          value="Hello, world!"
-          onChange={() => {
-            console.log("onChange");
+      <Component name="fab" description="A floating action button component">
+        <Fab
+          onClick={() => {
+            console.log("onClick");
           }}
+        >
+          <Plus />
+        </Fab>
+      </Component>
+      <Component name="notification" description="A notification component">
+        <Notification>
+          <Fab
+            onClick={() => {
+              console.log("clicked");
+            }}
+          >
+            <Rocket />
+          </Fab>
+          <Notification.Content size="md" side="top-right">
+            4
+          </Notification.Content>
+        </Notification>
+      </Component>
+      <Component name="rating" description="A rating component">
+        <Rating defaultValue={3}>
+          {Array.from({ length: 5 }).map((_, index) => (
+            <Rating.Button key={index} />
+          ))}
+        </Rating>
+      </Component>
+      <Component name="color-picker" description="A color picker component">
+        <ColorPicker className="max-w-sm rounded-md border bg-background p-4 shadow-sm">
+          <ColorPicker.Selection />
+          <div className="flex items-center gap-4">
+            <ColorPicker.EyeDropper />
+            <div className="grid w-full gap-1">
+              <ColorPicker.Hue />
+              <ColorPicker.Alpha />
+            </div>
+          </div>
+          <div className="flex items-center gap-2">
+            <ColorPicker.Output />
+            <ColorPicker.Format />
+          </div>
+        </ColorPicker>
+      </Component>
+      <Component name="dropzone" description="A dropzone component">
+        <Dropzone>
+          <Dropzone.Content />
+          <Dropzone.EmptyState>
+            <p>Drag and drop files here</p>
+          </Dropzone.EmptyState>
+        </Dropzone>
+      </Component>
+      <Component name="radio-group" description="A radio group component">
+        <span>Vertical</span>
+        <RadioGroup
+          options={[
+            { label: "Option 1", value: "option1" },
+            { label: "Option 2", value: "option2" },
+          ]}
+        />
+        <span>Horizontal</span>
+        <RadioGroup
+          orientation="horizontal"
+          options={[
+            { label: "Option 1", value: "option1" },
+            { label: "Option 2", value: "option2" },
+          ]}
         />
       </Component>
     </main>

@@ -12,7 +12,7 @@
       "registryDependencies": ["command", "popover", "button"],
       "files": [
         {
-          "path": "registry/combobox.tsx",
+          "path": "registry/components/combobox.tsx",
           "type": "registry:component"
         }
       ]
@@ -26,22 +26,115 @@
       "registryDependencies": ["badge", "command", "popover", "button"],
       "files": [
         {
-          "path": "registry/multi-combobox.tsx",
+          "path": "registry/components/multi-combobox.tsx",
           "type": "registry:component"
         }
       ]
     },
     {
-      "name": "auto-growing-textarea",
+      "name": "fab",
       "type": "registry:component",
-      "title": "Auto Growing Textarea",
-      "description": "A textarea that grows as you type",
+      "title": "Floating Action Button",
+      "description": "A floating action button component",
       "dependencies": ["class-variance-authority"],
       "registryDependencies": [],
       "files": [
         {
-          "path": "registry/auto-growing-textarea.tsx",
+          "path": "registry/components/fab.tsx",
           "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "notification",
+      "type": "registry:component",
+      "title": "Notification",
+      "description": "A notification component",
+      "dependencies": ["class-variance-authority"],
+      "registryDependencies": [
+        "https://faktion-ui.vercel.app/r/use-composition"
+      ],
+      "files": [
+        {
+          "path": "registry/components/notification.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "rating",
+      "type": "registry:component",
+      "title": "Rating",
+      "description": "A rating component",
+      "dependencies": [
+        "@radix-ui/react-use-controllable-state",
+        "lucide-react"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/components/rating.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "color-picker",
+      "type": "registry:component",
+      "title": "Color Picker",
+      "description": "A color picker component",
+      "dependencies": ["color", "lucide-react", "radix-ui"],
+      "registryDependencies": ["button", "input", "select"],
+      "files": [
+        {
+          "path": "registry/components/color-picker.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "dropzone",
+      "type": "registry:component",
+      "title": "Dropzone",
+      "description": "A dropzone component",
+      "dependencies": ["react-dropzone", "lucide-react"],
+      "registryDependencies": ["button"],
+      "files": [
+        {
+          "path": "registry/components/dropzone.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "radio-group",
+      "type": "registry:component",
+      "title": "Radio Group",
+      "description": "A radio group component",
+      "dependencies": [
+        "lucide-react",
+        "@radix-ui/react-radio-group",
+        "class-variance-authority"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/components/radio-group.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "use-composition",
+      "type": "registry:hook",
+      "title": "Use Composition",
+      "description": "A hook to extract children of a specific type from a composition",
+      "dependencies": ["react"],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/hooks/use-composition.tsx",
+          "type": "registry:hook"
         }
       ]
     }
