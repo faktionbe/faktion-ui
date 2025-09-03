@@ -4,15 +4,8 @@
   "type": "registry:component",
   "title": "Web Preview",
   "description": "A web preview component",
-  "dependencies": [
-    "lucide-react"
-  ],
-  "registryDependencies": [
-    "collapsible",
-    "button",
-    "input",
-    "tooltip"
-  ],
+  "dependencies": ["lucide-react"],
+  "registryDependencies": ["collapsible", "button", "input", "tooltip"],
   "files": [
     {
       "path": "registry/components/web-preview.tsx",
@@ -20,7 +13,5 @@
       "type": "registry:component"
     }
   ],
-  "categories": [
-    "chat"
-  ]
+  "categories": ["chat"]
 }

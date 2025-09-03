@@ -4,9 +4,7 @@
   "type": "registry:component",
   "title": "Floating Action Button",
   "description": "A floating action button component",
-  "dependencies": [
-    "class-variance-authority"
-  ],
+  "dependencies": ["class-variance-authority"],
   "registryDependencies": [],
   "files": [
     {

@@ -4,12 +4,8 @@
   "type": "registry:component",
   "title": "Task",
   "description": "A task component",
-  "dependencies": [
-    "lucide-react"
-  ],
-  "registryDependencies": [
-    "collapsible"
-  ],
+  "dependencies": ["lucide-react"],
+  "registryDependencies": ["collapsible"],
   "files": [
     {
       "path": "registry/components/task.tsx",
@@ -17,7 +13,5 @@
       "type": "registry:component"
     }
   ],
-  "categories": [
-    "chat"
-  ]
+  "categories": ["chat"]
 }

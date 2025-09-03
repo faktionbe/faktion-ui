@@ -4,15 +4,8 @@
   "type": "registry:component",
   "title": "Prompt Input",
   "description": "A prompt input component",
-  "dependencies": [
-    "ai",
-    "lucide-react"
-  ],
-  "registryDependencies": [
-    "button",
-    "select",
-    "textarea"
-  ],
+  "dependencies": ["ai", "lucide-react"],
+  "registryDependencies": ["button", "select", "textarea"],
   "files": [
     {
       "path": "registry/components/prompt-input.tsx",
@@ -20,7 +13,5 @@
       "type": "registry:component"
     }
   ],
-  "categories": [
-    "chat"
-  ]
+  "categories": ["chat"]
 }

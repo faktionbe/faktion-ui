@@ -9,7 +9,7 @@ Visit the production build on [faktion ui](https://ui.faktion.com/) and use one 
 
 ## Contribute
 
-- Use composition as much as possible, this is the most scalable pattern to build complex components. 
-- Use context for shared state / prop drilling when things are getting complicated. 
+- Use composition as much as possible, this is the most scalable pattern to build complex components.
+- Use context for shared state / prop drilling when things are getting complicated.
 - Make sure `pnpm build` succeeds before creating a pull request
-- Create your component under `registry`. Add documentation under `app/page.tsx`. Extend `registry.json` so shadcn CLI can find it. 
+- Create your component under `registry`. Add documentation under `app/page.tsx`. Extend `registry.json` so shadcn CLI can find it.

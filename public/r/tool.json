@@ -4,14 +4,8 @@
   "type": "registry:component",
   "title": "Tool",
   "description": "A tool component",
-  "dependencies": [
-    "ai",
-    "lucide-react"
-  ],
-  "registryDependencies": [
-    "collapsible",
-    "badge"
-  ],
+  "dependencies": ["ai", "lucide-react"],
+  "registryDependencies": ["collapsible", "badge"],
   "files": [
     {
       "path": "registry/components/tool.tsx",
@@ -19,7 +13,5 @@
       "type": "registry:component"
     }
   ],
-  "categories": [
-    "chat"
-  ]
+  "categories": ["chat"]
 }

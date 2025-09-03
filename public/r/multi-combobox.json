@@ -4,16 +4,8 @@
   "type": "registry:component",
   "title": "Multi Combobox",
   "description": "A multi combobox component",
-  "dependencies": [
-    "cmdk",
-    "lucide-react"
-  ],
-  "registryDependencies": [
-    "badge",
-    "command",
-    "popover",
-    "button"
-  ],
+  "dependencies": ["cmdk", "lucide-react"],
+  "registryDependencies": ["badge", "command", "popover", "button"],
   "files": [
     {
       "path": "registry/components/multi-combobox.tsx",
@@ -21,7 +13,5 @@
       "type": "registry:component"
     }
   ],
-  "categories": [
-    "forms"
-  ]
+  "categories": ["forms"]
 }

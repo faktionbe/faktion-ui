@@ -5,9 +5,7 @@
   "title": "Toggle",
   "description": "A toggle component",
   "dependencies": [],
-  "registryDependencies": [
-    "@faktion/use-composition"
-  ],
+  "registryDependencies": ["@faktion/use-composition"],
   "files": [
     {
       "path": "registry/components/toggle.tsx",

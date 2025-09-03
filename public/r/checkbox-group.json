@@ -4,13 +4,8 @@
   "type": "registry:component",
   "title": "Checkbox Group",
   "description": "A checkbox group component",
-  "dependencies": [
-    "@radix-ui/react-checkbox",
-    "class-variance-authority"
-  ],
-  "registryDependencies": [
-    "checkbox"
-  ],
+  "dependencies": ["@radix-ui/react-checkbox", "class-variance-authority"],
+  "registryDependencies": ["checkbox"],
   "files": [
     {
       "path": "registry/components/checkbox-group.tsx",
@@ -18,7 +13,5 @@
       "type": "registry:component"
     }
   ],
-  "categories": [
-    "forms"
-  ]
+  "categories": ["forms"]
 }

@@ -1,7 +1,7 @@
-import React, { createContext, type FC, useCallback, useContext } from "react";
+import React, { createContext, type FC, useCallback, useContext } from 'react';
 
-import { useComposition } from "@/hooks/use-composition";
-import { cn } from "@/lib/utils";
+import { useComposition } from '@/hooks/use-composition';
+import { cn } from '@/lib/utils';
 
 interface ToggleContextType {
   value: string;
@@ -9,7 +9,7 @@ interface ToggleContextType {
 }
 
 const ToggleContext = createContext<ToggleContextType>({
-  value: "",
+  value: '',
   setValue: () => undefined,
 });
 
@@ -27,15 +27,14 @@ const ToggleTab: FC<ToggleTabProps> = ({ children, value }) => {
       data-tab={value}
       onClick={handleClick}
       className={cn(
-        "px-3 py-1 text-sm rounded text-muted-foreground hover:text-foreground",
-        value === currentValue && "bg-background text-foreground"
-      )}
-    >
+        'px-3 py-1 text-sm rounded text-muted-foreground hover:text-foreground',
+        value === currentValue && 'bg-background text-foreground'
+      )}>
       {children}
     </button>
   );
 };
-ToggleTab.displayName = "ToggleTab";
+ToggleTab.displayName = 'ToggleTab';
 
 export interface ToggleProps {
   value: string;

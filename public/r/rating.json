@@ -4,10 +4,7 @@
   "type": "registry:component",
   "title": "Rating",
   "description": "A rating component",
-  "dependencies": [
-    "@radix-ui/react-use-controllable-state",
-    "lucide-react"
-  ],
+  "dependencies": ["@radix-ui/react-use-controllable-state", "lucide-react"],
   "registryDependencies": [],
   "files": [
     {
@@ -16,7 +13,5 @@
       "type": "registry:component"
     }
   ],
-  "categories": [
-    "chat"
-  ]
+  "categories": ["chat"]
 }

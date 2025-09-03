@@ -4,13 +4,8 @@
   "type": "registry:component",
   "title": "Country Combobox",
   "description": "A country combobox component",
-  "dependencies": [
-    "@reacture-io/iso-locale",
-    "react-country-flag"
-  ],
-  "registryDependencies": [
-    "@faktion/combobox"
-  ],
+  "dependencies": ["@reacture-io/iso-locale", "react-country-flag"],
+  "registryDependencies": ["@faktion/combobox"],
   "files": [
     {
       "path": "registry/components/country-combobox.tsx",
@@ -18,7 +13,5 @@
       "type": "registry:component"
     }
   ],
-  "categories": [
-    "forms"
-  ]
+  "categories": ["forms"]
 }
