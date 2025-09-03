@@ -1,7 +1,7 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry.json",
   "name": "faktion",
-  "homepage": "https://reacture.io",
+  "homepage": "https://ui.faktion.com",
   "items": [
     {
       "name": "combobox",
