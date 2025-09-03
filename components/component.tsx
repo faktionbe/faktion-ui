@@ -110,7 +110,7 @@ const Component: FC<ComponentProps> = ({
             <Toggle.Tab value='code'>Code</Toggle.Tab>
           </Toggle>
         )}
-        <Install component={`@faktion/${name}.json`} />
+        <Install component={`@faktion/${name}`} />
       </div>
     </div>
   );
