@@ -53,7 +53,7 @@
       "title": "Notification",
       "description": "A notification component",
       "dependencies": ["class-variance-authority"],
-      "registryDependencies": ["https://ui.faktion.com/r/use-composition"],
+      "registryDependencies": ["@faktion/use-composition"],
       "files": [
         {
           "path": "registry/components/notification.tsx",
@@ -67,7 +67,7 @@
       "title": "Toggle",
       "description": "A toggle component",
       "dependencies": [],
-      "registryDependencies": ["https://ui.faktion.com/r/use-composition"],
+      "registryDependencies": ["@faktion/use-composition"],
       "files": [
         {
           "path": "registry/components/toggle.tsx",
@@ -163,7 +163,7 @@
       "title": "Country Combobox",
       "description": "A country combobox component",
       "dependencies": ["@reacture-io/iso-locale", "react-country-flag"],
-      "registryDependencies": ["https://ui.faktion.com/r/combobox"],
+      "registryDependencies": ["@faktion/combobox"],
       "files": [
         {
           "path": "registry/components/country-combobox.tsx",
@@ -178,7 +178,7 @@
       "title": "Language Combobox",
       "description": "A language combobox component",
       "dependencies": ["@reacture-io/iso-locale", "iso-639-1"],
-      "registryDependencies": ["https://ui.faktion.com/r/combobox"],
+      "registryDependencies": ["@faktion/combobox"],
       "files": [
         {
           "path": "registry/components/language-combobox.tsx",
@@ -316,10 +316,7 @@
         "@radix-ui/react-use-controllable-state",
         "lucide-react"
       ],
-      "registryDependencies": [
-        "collapsible",
-        "https://ui.faktion.com/r/response"
-      ],
+      "registryDependencies": ["collapsible", "@faktion/response"],
       "files": [
         {
           "path": "registry/components/reasoning.tsx",
