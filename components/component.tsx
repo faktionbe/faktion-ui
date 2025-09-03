@@ -102,9 +102,7 @@ const Component: FC<ComponentProps> = ({
             <Toggle.Tab value="code">Code</Toggle.Tab>
           </Toggle>
         )}
-        <Install
-          component={`${process.env.NEXT_PUBLIC_BASE_URL}/r/${name}.json`}
-        />
+        <Install component={`@faktion/${name}.json`} />
       </div>
     </div>
   );

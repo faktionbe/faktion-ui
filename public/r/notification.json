@@ -8,7 +8,7 @@
     "class-variance-authority"
   ],
   "registryDependencies": [
-    "https://faktion-ui.vercel.app/r/use-composition"
+    "@faktion/use-composition"
   ],
   "files": [
     {
