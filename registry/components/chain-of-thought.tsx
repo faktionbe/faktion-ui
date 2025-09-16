@@ -31,7 +31,7 @@ const useChainOfThought = () => {
   const context = useContext(ChainOfThoughtContext);
   if (!context) {
     throw new Error(
-      'ChainOfThought components must be used within ChainOfThought'
+      'useChainOfThought must be used within the ChainOfThought component'
     );
   }
   return context;
@@ -141,9 +141,9 @@ const ChainOfThoughtStep: FC<ChainOfThoughtStepProps> = ({
         <div className='-mx-px absolute top-7 bottom-0 left-1/2 w-px bg-border' />
       </div>
       <div className='flex-1 space-y-2'>
-        <div>{label}</div>
+        <span>{label}</span>
         {description && (
-          <div className='text-muted-foreground text-xs'>{description}</div>
+          <span className='text-muted-foreground text-xs'>{description}</span>
         )}
         {children}
       </div>
