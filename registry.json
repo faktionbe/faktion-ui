@@ -73,25 +73,8 @@
           "path": "registry/components/toggle.tsx",
           "type": "registry:component"
         }
-      ]
-    },
-    {
-      "name": "rating",
-      "type": "registry:component",
-      "title": "Rating",
-      "description": "A rating component",
-      "dependencies": [
-        "@radix-ui/react-use-controllable-state",
-        "lucide-react"
       ],
-      "registryDependencies": [],
-      "files": [
-        {
-          "path": "registry/components/rating.tsx",
-          "type": "registry:component"
-        }
-      ],
-      "categories": ["chat"]
+      "categories": ["forms"]
     },
     {
       "name": "color-picker",
@@ -188,6 +171,36 @@
       "categories": ["forms"]
     },
     {
+      "name": "actions",
+      "type": "registry:component",
+      "title": "Actions",
+      "description": "A actions component",
+      "dependencies": [],
+      "registryDependencies": ["button", "tooltip"],
+      "files": [
+        {
+          "path": "registry/components/actions.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "categories": ["chat"]
+    },
+    {
+      "name": "artifact",
+      "type": "registry:component",
+      "title": "Artifact",
+      "description": "A artifact component",
+      "dependencies": ["lucide-react"],
+      "registryDependencies": ["button", "tooltip"],
+      "files": [
+        {
+          "path": "registry/components/artifact.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "categories": ["chat"]
+    },
+    {
       "name": "branch",
       "type": "registry:component",
       "title": "Branch",
@@ -197,6 +210,24 @@
       "files": [
         {
           "path": "registry/components/branch.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "categories": ["chat"]
+    },
+    {
+      "name": "chain-of-thought",
+      "type": "registry:component",
+      "title": "Chain of Thought",
+      "description": "A chain of thought component",
+      "dependencies": [
+        "@radix-ui/react-use-controllable-state",
+        "lucide-react"
+      ],
+      "registryDependencies": ["badge", "collapsible"],
+      "files": [
+        {
+          "path": "registry/components/chain-of-thought.tsx",
           "type": "registry:component"
         }
       ],
@@ -302,6 +333,24 @@
       "files": [
         {
           "path": "registry/components/prompt-input.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "categories": ["chat"]
+    },
+    {
+      "name": "rating",
+      "type": "registry:component",
+      "title": "Rating",
+      "description": "A rating component",
+      "dependencies": [
+        "@radix-ui/react-use-controllable-state",
+        "lucide-react"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/components/rating.tsx",
           "type": "registry:component"
         }
       ],
