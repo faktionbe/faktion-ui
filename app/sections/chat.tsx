@@ -1,16 +1,17 @@
-import React from 'react';
 import {
   CopyIcon,
   GlobeIcon,
   MicIcon,
-  PlusIcon,
   SearchIcon,
   ThumbsDown,
   ThumbsUp,
 } from 'lucide-react';
 
 import Component from '@/components/component';
+import { Actions } from '@/registry/components/actions';
+import { Artifact } from '@/registry/components/artifact';
 import { Branch } from '@/registry/components/branch';
+import { ChainOfThought } from '@/registry/components/chain-of-thought';
 import { CodeBlock } from '@/registry/components/code-block';
 import { Conversation } from '@/registry/components/conversation';
 import { InlineCitation } from '@/registry/components/inline-citation';
@@ -26,9 +27,6 @@ import { Suggestion, Suggestions } from '@/registry/components/suggestion';
 import { Task } from '@/registry/components/task';
 import { Tool } from '@/registry/components/tool';
 import { WebPreview } from '@/registry/components/web-preview';
-import { Actions } from '@/registry/components/actions';
-import { Artifact } from '@/registry/components/artifact';
-import { ChainOfThought } from '@/registry/components/chain-of-thought';
 
 const Chat = () => (
   <>
