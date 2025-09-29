@@ -139,11 +139,13 @@ const MultiCombobox = <Grouped extends boolean>({
           const Chip = (
             <Badge key={option.value}>
               {option.label}
-              <X
-                onClick={() => {
-                  handleRemove(option.value);
-                }}
-              />
+              {!disabled && (
+                <X
+                  onClick={() => {
+                    handleRemove(option.value);
+                  }}
+                />
+              )}
             </Badge>
           );
           _selected.push(Chip);
@@ -175,21 +177,26 @@ const MultiCombobox = <Grouped extends boolean>({
     return _groups;
   }, [grouped, _options]);
 
+  const hasSelected = useMemo(
+    () => Array.isArray(selected) && selected.length > 0,
+    [selected]
+  );
+
   return (
     <Popover
       open={open}
       onOpenChange={setOpen}>
       <PopoverTrigger asChild>
         <Button
-          className={cn(className, 'flex flex-wrap justify-start gap-1')}
+          className={cn(className, 'flex flex-wrap justify-start gap-1', {
+            'text-muted-foreground': !hasSelected,
+          })}
           variant='outline'
           role='combobox'
           aria-expanded={open}
           disabled={disabled}>
-          {Array.isArray(selected) && selected.length > 0
-            ? selected
-            : placeholder}
-          <ChevronsUpDown className='opacity-50' />
+          {hasSelected ? selected : placeholder}
+          <ChevronsUpDown className='ml-auto opacity-50' />
         </Button>
       </PopoverTrigger>
       <PopoverContent className='w-full p-0'>

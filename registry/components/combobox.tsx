@@ -154,7 +154,9 @@ const Combobox = <Grouped extends boolean>({
       onOpenChange={setOpen}>
       <PopoverTrigger asChild>
         <Button
-          className={cn(className, 'flex flex-wrap justify-start gap-1')}
+          className={cn(className, 'flex flex-wrap justify-start gap-1', {
+            'text-muted-foreground': !selected,
+          })}
           variant='outline'
           role='combobox'
           aria-expanded={open}

@@ -27,6 +27,18 @@ const Forms = () => (
           />
           `}>
       <Combobox
+        value={undefined}
+        placeholder='Select option'
+        options={[
+          { label: 'Option 1', value: 'option1' },
+          { label: 'Option 2', value: 'option2' },
+        ]}
+        onChange={() => {
+          console.log('onChange');
+        }}
+      />
+
+      <Combobox
         value='option1'
         options={[
           { label: 'Option 1', value: 'option1' },
@@ -36,6 +48,7 @@ const Forms = () => (
           console.log('onChange');
         }}
       />
+
       <Combobox
         value='option1'
         grouped
@@ -66,6 +79,30 @@ const Forms = () => (
         />
       `}>
       <MultiCombobox
+        placeholder='Select options'
+        values={undefined}
+        options={[
+          { label: 'Option 1', value: 'option1' },
+          { label: 'Option 2', value: 'option2' },
+        ]}
+        onChange={() => {
+          console.log('onChange');
+        }}
+      />
+
+      <MultiCombobox
+        className='w-2xs'
+        values={undefined}
+        options={[
+          { label: 'Option 1', value: 'option1' },
+          { label: 'Option 2', value: 'option2' },
+        ]}
+        onChange={() => {
+          console.log('onChange');
+        }}
+      />
+
+      <MultiCombobox
         values={['option1', 'option2']}
         options={[
           { label: 'Option 1', value: 'option1' },
@@ -83,6 +120,18 @@ const Forms = () => (
           { group: 'Group 1', label: 'Option 1', value: 'option1' },
           { group: 'Group 1', label: 'Option 2', value: 'option2' },
           { group: 'Group 2', label: 'Option 3', value: 'option3' },
+        ]}
+        onChange={() => {
+          console.log('onChange');
+        }}
+      />
+
+      <MultiCombobox
+        disabled
+        values={['option1', 'option2']}
+        options={[
+          { label: 'Option 1', value: 'option1' },
+          { label: 'Option 2', value: 'option2' },
         ]}
         onChange={() => {
           console.log('onChange');
