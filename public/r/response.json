@@ -4,7 +4,9 @@
   "type": "registry:component",
   "title": "Response",
   "description": "A response component",
-  "dependencies": ["streamdown"],
+  "dependencies": [
+    "streamdown"
+  ],
   "registryDependencies": [],
   "files": [
     {
@@ -13,5 +15,7 @@
       "type": "registry:component"
     }
   ],
-  "categories": ["chat"]
+  "categories": [
+    "chat"
+  ]
 }

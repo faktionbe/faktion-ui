@@ -4,8 +4,13 @@
   "type": "registry:component",
   "title": "Language Combobox",
   "description": "A language combobox component",
-  "dependencies": ["@reacture-io/iso-locale", "iso-639-1"],
-  "registryDependencies": ["@faktion/combobox"],
+  "dependencies": [
+    "@reacture-io/iso-locale",
+    "iso-639-1"
+  ],
+  "registryDependencies": [
+    "@faktion/combobox"
+  ],
   "files": [
     {
       "path": "registry/components/language-combobox.tsx",
@@ -13,5 +18,7 @@
       "type": "registry:component"
     }
   ],
-  "categories": ["forms"]
+  "categories": [
+    "forms"
+  ]
 }

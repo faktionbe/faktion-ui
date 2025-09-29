@@ -4,8 +4,14 @@
   "type": "registry:component",
   "title": "Inline Citation",
   "description": "A inline citation component",
-  "dependencies": ["lucide-react"],
-  "registryDependencies": ["badge", "carousel", "hover-card"],
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "badge",
+    "carousel",
+    "hover-card"
+  ],
   "files": [
     {
       "path": "registry/components/inline-citation.tsx",
@@ -13,5 +19,7 @@
       "type": "registry:component"
     }
   ],
-  "categories": ["chat"]
+  "categories": [
+    "chat"
+  ]
 }

@@ -4,8 +4,15 @@
   "type": "registry:component",
   "title": "Combobox",
   "description": "A combobox component",
-  "dependencies": ["cmdk", "lucide-react"],
-  "registryDependencies": ["command", "popover", "button"],
+  "dependencies": [
+    "cmdk",
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "command",
+    "popover",
+    "button"
+  ],
   "files": [
     {
       "path": "registry/components/combobox.tsx",
@@ -13,5 +20,7 @@
       "type": "registry:component"
     }
   ],
-  "categories": ["forms"]
+  "categories": [
+    "forms"
+  ]
 }

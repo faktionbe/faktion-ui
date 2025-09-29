@@ -4,7 +4,9 @@
   "type": "registry:hook",
   "title": "Use Composition",
   "description": "A hook to extract children of a specific type from a composition",
-  "dependencies": ["react"],
+  "dependencies": [
+    "react"
+  ],
   "registryDependencies": [],
   "files": [
     {
@@ -13,5 +15,7 @@
       "type": "registry:hook"
     }
   ],
-  "categories": ["hooks"]
+  "categories": [
+    "hooks"
+  ]
 }

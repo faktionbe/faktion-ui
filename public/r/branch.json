@@ -4,8 +4,13 @@
   "type": "registry:component",
   "title": "Branch",
   "description": "A branch component",
-  "dependencies": ["ai", "lucide-react"],
-  "registryDependencies": ["button"],
+  "dependencies": [
+    "ai",
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "button"
+  ],
   "files": [
     {
       "path": "registry/components/branch.tsx",
@@ -13,5 +18,7 @@
       "type": "registry:component"
     }
   ],
-  "categories": ["chat"]
+  "categories": [
+    "chat"
+  ]
 }

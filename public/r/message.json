@@ -4,8 +4,12 @@
   "type": "registry:component",
   "title": "Message",
   "description": "A message component",
-  "dependencies": ["ai"],
-  "registryDependencies": ["avatar"],
+  "dependencies": [
+    "ai"
+  ],
+  "registryDependencies": [
+    "avatar"
+  ],
   "files": [
     {
       "path": "registry/components/message.tsx",
@@ -13,5 +17,7 @@
       "type": "registry:component"
     }
   ],
-  "categories": ["chat"]
+  "categories": [
+    "chat"
+  ]
 }

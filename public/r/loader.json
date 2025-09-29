@@ -13,5 +13,7 @@
       "type": "registry:component"
     }
   ],
-  "categories": ["chat"]
+  "categories": [
+    "chat"
+  ]
 }

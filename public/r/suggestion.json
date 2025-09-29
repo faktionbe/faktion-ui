@@ -4,8 +4,13 @@
   "type": "registry:component",
   "title": "Suggestion",
   "description": "A suggestion component",
-  "dependencies": ["lucide-react"],
-  "registryDependencies": ["button", "scroll-area"],
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "button",
+    "scroll-area"
+  ],
   "files": [
     {
       "path": "registry/components/suggestion.tsx",
@@ -13,5 +18,7 @@
       "type": "registry:component"
     }
   ],
-  "categories": ["chat"]
+  "categories": [
+    "chat"
+  ]
 }

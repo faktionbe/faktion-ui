@@ -4,8 +4,16 @@
   "type": "registry:component",
   "title": "Color Picker",
   "description": "A color picker component",
-  "dependencies": ["color", "lucide-react", "radix-ui"],
-  "registryDependencies": ["button", "input", "select"],
+  "dependencies": [
+    "color",
+    "lucide-react",
+    "radix-ui"
+  ],
+  "registryDependencies": [
+    "button",
+    "input",
+    "select"
+  ],
   "files": [
     {
       "path": "registry/components/color-picker.tsx",
@@ -13,5 +21,7 @@
       "type": "registry:component"
     }
   ],
-  "categories": ["forms"]
+  "categories": [
+    "forms"
+  ]
 }

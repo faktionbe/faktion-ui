@@ -4,8 +4,13 @@
   "type": "registry:component",
   "title": "Conversation",
   "description": "A conversation component",
-  "dependencies": ["use-stick-to-bottom", "lucide-react"],
-  "registryDependencies": ["button"],
+  "dependencies": [
+    "use-stick-to-bottom",
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "button"
+  ],
   "files": [
     {
       "path": "registry/components/conversation.tsx",
@@ -13,5 +18,7 @@
       "type": "registry:component"
     }
   ],
-  "categories": ["chat"]
+  "categories": [
+    "chat"
+  ]
 }

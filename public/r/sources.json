@@ -4,8 +4,12 @@
   "type": "registry:component",
   "title": "Sources",
   "description": "A source component",
-  "dependencies": ["lucide-react"],
-  "registryDependencies": ["collapsible"],
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "collapsible"
+  ],
   "files": [
     {
       "path": "registry/components/sources.tsx",
@@ -13,5 +17,7 @@
       "type": "registry:component"
     }
   ],
-  "categories": ["chat"]
+  "categories": [
+    "chat"
+  ]
 }

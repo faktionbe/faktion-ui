@@ -4,8 +4,13 @@
   "type": "registry:component",
   "title": "Code Block",
   "description": "A code block component",
-  "dependencies": ["react-syntax-highlighter", "lucide-react"],
-  "registryDependencies": ["button"],
+  "dependencies": [
+    "react-syntax-highlighter",
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "button"
+  ],
   "files": [
     {
       "path": "registry/components/code-block.tsx",
@@ -13,5 +18,7 @@
       "type": "registry:component"
     }
   ],
-  "categories": ["chat"]
+  "categories": [
+    "chat"
+  ]
 }

@@ -17,5 +17,7 @@
       "type": "registry:component"
     }
   ],
-  "categories": ["forms"]
+  "categories": [
+    "forms"
+  ]
 }

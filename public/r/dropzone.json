@@ -4,8 +4,13 @@
   "type": "registry:component",
   "title": "Dropzone",
   "description": "A dropzone component",
-  "dependencies": ["react-dropzone", "lucide-react"],
-  "registryDependencies": ["button"],
+  "dependencies": [
+    "react-dropzone",
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "button"
+  ],
   "files": [
     {
       "path": "registry/components/dropzone.tsx",
@@ -13,5 +18,7 @@
       "type": "registry:component"
     }
   ],
-  "categories": ["forms"]
+  "categories": [
+    "forms"
+  ]
 }

@@ -4,7 +4,9 @@
   "type": "registry:component",
   "title": "Image",
   "description": "A image component",
-  "dependencies": ["ai"],
+  "dependencies": [
+    "ai"
+  ],
   "registryDependencies": [],
   "files": [
     {
@@ -13,5 +15,7 @@
       "type": "registry:component"
     }
   ],
-  "categories": ["chat"]
+  "categories": [
+    "chat"
+  ]
 }

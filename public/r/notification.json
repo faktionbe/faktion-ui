@@ -4,8 +4,12 @@
   "type": "registry:component",
   "title": "Notification",
   "description": "A notification component",
-  "dependencies": ["class-variance-authority"],
-  "registryDependencies": ["@faktion/use-composition"],
+  "dependencies": [
+    "class-variance-authority"
+  ],
+  "registryDependencies": [
+    "@faktion/use-composition"
+  ],
   "files": [
     {
       "path": "registry/components/notification.tsx",

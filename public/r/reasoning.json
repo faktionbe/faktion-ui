@@ -4,8 +4,14 @@
   "type": "registry:component",
   "title": "Reasoning",
   "description": "A reasoning component",
-  "dependencies": ["@radix-ui/react-use-controllable-state", "lucide-react"],
-  "registryDependencies": ["collapsible", "@faktion/response"],
+  "dependencies": [
+    "@radix-ui/react-use-controllable-state",
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "collapsible",
+    "@faktion/response"
+  ],
   "files": [
     {
       "path": "registry/components/reasoning.tsx",
@@ -13,5 +19,7 @@
       "type": "registry:component"
     }
   ],
-  "categories": ["chat"]
+  "categories": [
+    "chat"
+  ]
 }
