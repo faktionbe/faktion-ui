@@ -1,3 +1,4 @@
+import { useMemo } from 'react';
 import { type Table } from '@tanstack/react-table';
 
 import { Checkbox } from '@/components/ui/checkbox';
@@ -15,7 +16,7 @@ const SelectableHeader = <DataType,>({
     table.toggleAllRowsSelected(checked);
   };
 
-  const isChecked = () => {
+  const isChecked = useMemo(() => {
     if (table.getIsAllRowsSelected()) {
       return true;
     }
@@ -23,10 +24,11 @@ const SelectableHeader = <DataType,>({
       return 'indeterminate';
     }
     return false;
-  };
+  }, [table]);
+
   return (
     <Checkbox
-      checked={isChecked()}
+      checked={isChecked}
       onCheckedChange={handleCheckedChange}
     />
   );
