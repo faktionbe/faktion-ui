@@ -3,6 +3,7 @@
 import Chat from '@/app/sections/chat';
 import Default from '@/app/sections/default';
 import Forms from '@/app/sections/forms';
+import Table from '@/app/sections/table';
 
 const Home = () => (
   <div className='max-w-3xl mx-auto flex flex-col min-h-svh px-4 py-8 gap-8'>
@@ -14,6 +15,7 @@ const Home = () => (
       <Default />
       <Forms />
       <Chat />
+      <Table />
     </main>
   </div>
 );
