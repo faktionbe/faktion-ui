@@ -480,6 +480,87 @@
       "categories": ["chat"]
     },
     {
+      "name": "column-header",
+      "type": "registry:component",
+      "title": "Column Header",
+      "description": "A column header component",
+      "dependencies": ["@tanstack/react-table", "lucide-react"],
+      "registryDependencies": ["button", "dropdown-menu"],
+      "files": [
+        {
+          "path": "registry/components/table/column-header.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "categories": ["table"]
+    },
+    {
+      "name": "selectable-row",
+      "type": "registry:component",
+      "title": "Selectable Row",
+      "description": "A selectable row component",
+      "dependencies": ["@tanstack/react-table"],
+      "registryDependencies": ["checkbox", "@faktion/radio-group"],
+      "files": [
+        {
+          "path": "registry/components/table/selectable-row.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "categories": ["table"]
+    },
+    {
+      "name": "selectable-header",
+      "type": "registry:component",
+      "title": "Selectable Header",
+      "description": "A selectable header component",
+      "dependencies": ["@tanstack/react-table"],
+      "registryDependencies": ["checkbox"],
+      "files": [
+        {
+          "path": "registry/components/table/selectable-header.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "categories": ["table"]
+    },
+    {
+      "name": "pagination",
+      "type": "registry:component",
+      "title": "Pagination",
+      "description": "A pagination component",
+      "dependencies": ["@tanstack/react-table"],
+      "registryDependencies": ["button", "select"],
+      "files": [
+        {
+          "path": "registry/components/table/pagination.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "categories": ["table"]
+    },
+    {
+      "name": "data-table",
+      "type": "registry:component",
+      "title": "Data Table",
+      "description": "A data table component",
+      "dependencies": ["@tanstack/react-table"],
+      "registryDependencies": [
+        "table",
+        "@faktion/pagination",
+        "@faktion/column-header",
+        "@faktion/selectable-row",
+        "@faktion/selectable-header"
+      ],
+      "files": [
+        {
+          "path": "registry/components/table/data-table.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "categories": ["table"]
+    },
+    {
       "name": "use-composition",
       "type": "registry:hook",
       "title": "Use Composition",
