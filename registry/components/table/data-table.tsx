@@ -14,14 +14,13 @@ import {
   TableRow,
 } from '@/components/ui/table';
 import { cn } from '@/lib/utils';
-import type { ExpandableRowProps } from '@/registry/components/table/expandable-row';
 import { Pagination } from '@/registry/components/table/pagination';
 
 interface DataTableProps<TData> {
   table: TanstackTable<TData>;
   empty?: string;
   isNested?: boolean;
-  expansion?: ComponentType<ExpandableRowProps<TData>>;
+  expansion?: ComponentType<{ row: Row<TData> }>;
   onRowClick?: (row: Row<TData>) => void;
 }
 

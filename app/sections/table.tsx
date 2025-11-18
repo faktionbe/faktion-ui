@@ -157,18 +157,36 @@ const Table = () => {
 
   return (
     <Component
-      name='column-header'
-      description='A column header component'
+      name='data-table'
+      description='A data table component'
       code={`
 const [pagination, setPagination] = useState<PaginationState>({
     pageIndex: 0,
     pageSize: 10,
   });
-  const [sorting, setSorting] = useState<SortingState>([]);
+  const [sorting, setSorting] = useState<SortingState>([
+    {
+      id: 'email',
+      desc: true,
+    },
+  ]);
+  const [expanded, setExpanded] = useState<ExpandedState>({});
 
-  const columns = [ {
-      header: 'Email',
+  const columns: Array<ColumnDef<Entry>> = [
+    {
+      accessorKey: 'name',
+      header: ({ table }) => <SelectableHeader table={table} />,
+      cell: ({ row }) => <SelectableRow row={row} />,
+    },
+    {
       accessorKey: 'email',
+      header: ({ column }) => (
+        <ColumnHeader
+          column={column}
+          title='Email'
+          enableSorting
+        />
+      ),
     },
     {
       header: 'Phone',
@@ -190,12 +208,39 @@ const [pagination, setPagination] = useState<PaginationState>({
       header: 'Zip',
       accessorKey: 'zip',
     },
+    {
+      id: 'actions',
+      header: () => null,
+      cell: ({ row }) => (
+        <DropdownMenu>
+          <DropdownMenuTrigger>
+            <Button
+              variant={'outline'}
+              size='icon'>
+              <EllipsisVertical />
+            </Button>
+          </DropdownMenuTrigger>
+          <DropdownMenuContent>
+            <DropdownMenuItem
+              onClick={(event) => {
+                event.preventDefault();
+                event.stopPropagation();
+                row.getToggleExpandedHandler()();
+              }}>
+              {row.getIsExpanded() ? <ChevronDown /> : <ChevronRight />}
+              Expandable
+            </DropdownMenuItem>
+          </DropdownMenuContent>
+        </DropdownMenu>
+      ),
+    },
   ];
 
   const table = useReactTable<Entry>({
     state: {
       pagination,
       sorting,
+      expanded,
     },
     getRowId: (row) => row.id,
     data,
@@ -206,10 +251,16 @@ const [pagination, setPagination] = useState<PaginationState>({
     pageCount: Math.ceil(data.length / pagination.pageSize),
     getSortedRowModel: getSortedRowModel(),
     onSortingChange: setSorting,
+    getExpandedRowModel: getExpandedRowModel(),
+    onExpandedChange: setExpanded,
+    getRowCanExpand: () => true,
   });
 
   return (
-    <DataTable table={table} />
+    <DataTable
+        table={table}
+        expansion={() => <span>Expanded row</span>}
+      />
   );
       `}>
       <DataTable

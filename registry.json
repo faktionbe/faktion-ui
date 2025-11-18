@@ -547,8 +547,10 @@
       "dependencies": ["@tanstack/react-table"],
       "registryDependencies": [
         "table",
-        "@faktion/expandable-row",
-        "@faktion/pagination"
+        "@faktion/pagination",
+        "@faktion/column-header",
+        "@faktion/selectable-row",
+        "@faktion/selectable-header"
       ],
       "files": [
         {
