@@ -1,13 +1,7 @@
 /* eslint-disable no-nested-ternary */
 import * as React from 'react';
 import type { Column } from '@tanstack/react-table';
-import {
-  ArrowDown,
-  ArrowUp,
-  ChevronDown,
-  ChevronsUpDown,
-  ChevronUp,
-} from 'lucide-react';
+import { ChevronDown, ChevronsUpDown, ChevronUp } from 'lucide-react';
 
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
