@@ -1,6 +1,6 @@
+import { NextResponse } from 'next/server';
 import fs from 'node:fs/promises';
 import path from 'node:path';
-import { NextResponse } from 'next/server';
 
 export async function GET() {
   try {
@@ -10,7 +10,7 @@ export async function GET() {
       'recipes',
       'server',
       'microsoft-sso',
-      'MICROSOFT-SSO.MD',
+      'MICROSOFT-SSO.MD'
     );
     const md = await fs.readFile(markdownPath, 'utf8');
     return new Response(md, {
@@ -20,11 +20,10 @@ export async function GET() {
       },
     });
   } catch (error) {
+    console.error('Failed to load Microsoft SSO recipe.', error);
     return NextResponse.json(
       { error: 'Failed to load Microsoft SSO recipe.' },
-      { status: 500 },
+      { status: 500 }
     );
   }
 }
-
-
