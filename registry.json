@@ -632,6 +632,11 @@
           "path": "registry/recipes/server/microsoft-sso/microsoft.dto.ts",
           "type": "registry:file",
           "target": "src/modules/auth/models/microsoft.dto.ts"
+        },
+        {
+          "path": "registry/recipes/server/microsoft-sso/MICROSOFT-SSO.MD",
+          "type": "registry:file",
+          "target": "docs/MICROSOFT-SSO.MD"
         }
       ],
       "categories": ["recipes"]
