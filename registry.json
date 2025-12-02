@@ -621,17 +621,17 @@
         {
           "path": "registry/recipes/server/microsoft-sso/microsoft.strategy.ts",
           "type": "registry:file",
-          "target": "apps/server/src/modules/auth/microsoft.strategy.ts"
+          "target": "src/modules/auth/microsoft.strategy.ts"
         },
         {
           "path": "registry/recipes/server/microsoft-sso/microsoft.guard.ts",
           "type": "registry:file",
-          "target": "apps/server/src/modules/auth/microsoft.guard.ts"
+          "target": "src/modules/auth/microsoft.guard.ts"
         },
         {
           "path": "registry/recipes/server/microsoft-sso/microsoft.dto.ts",
           "type": "registry:file",
-          "target": "apps/server/src/modules/auth/models/microsoft.dto.ts"
+          "target": "src/modules/auth/models/microsoft.dto.ts"
         }
       ],
       "categories": ["recipes"]
