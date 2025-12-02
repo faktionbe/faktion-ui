@@ -1,11 +1,10 @@
 # Registry
 
-- https://faktion-ui-ksti.vercel.app/
-- https://ui.faktion.com/
+- https://registry.faktion.com/
 
 ## Usage
 
-Visit the production build on [faktion ui](https://ui.faktion.com/) and use one of the commands. Usage & preview are available.
+Visit the production build on [faktion ui](https://registry.faktion.com/) and use one of the commands. Usage & preview are available.
 
 ## Contribute
 
